@@ -6,6 +6,7 @@ import Business from './components/Business';
 import SearchBar from './components/SearchBar';
 import Home from "./components/Home";
 import ErrorPage from './components/ErrorPage';
+import Resources from './components/Resources'
 import './App.css';
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/businesses" component={Business} />
         <Route
-          path="/resources" 
+          path="/resources" component={Resources}
         />
         <Route component={ErrorPage}/>
         </Switch>
