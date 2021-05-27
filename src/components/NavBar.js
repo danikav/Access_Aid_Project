@@ -1,3 +1,4 @@
+import './NavBar.css';
 import { Link, useHistory } from "react-router-dom";
 
 
@@ -9,6 +10,7 @@ const NavBar = () => {
   }
 
   return (
+      <div className="NavBar">
     <ul>
       <li>
         <Link to="/">Home</Link>
@@ -23,6 +25,7 @@ const NavBar = () => {
         <button onClick={goBack}>Back</button>
       </li>
     </ul>
+    </div>
   );
 }
 

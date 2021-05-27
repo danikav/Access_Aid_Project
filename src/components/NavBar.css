@@ -1,0 +1,13 @@
+.NavBar{
+    background-color: purple;
+}
+
+.NavBar li {
+    display: inline;
+    margin-right:50px;
+}
+
+.NavBar li a {
+    color: white;
+    text-decoration: none;
+}
