@@ -1,6 +1,9 @@
-const Popup = () => {
+const Popup = ({toggle}) => {
   return (
-    <h1>It bloody works</h1>
+    <div>
+      <h1>It bloody works</h1>
+      <button onClick={toggle}>Close</button>
+    </div>
   );
 }
 

@@ -6,7 +6,7 @@ const MapContainer = () => {
   const [popUpWindow, setPopUpWindow] = useState(false);
 
   const togglePop = () => {
-    setPopUpWindow(true);
+    setPopUpWindow(!popUpWindow);
   };
 
   return (
