@@ -8,7 +8,7 @@ const ContainerBox = () => {
 
     return(
         <>
-        <h1>IM A BOX</h1>
+        <h1>Access Aid</h1>
         <NavBar />
         <Business />
         <Map />
