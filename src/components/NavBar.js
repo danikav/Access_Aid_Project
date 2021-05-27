@@ -24,6 +24,7 @@ const NavBar = () => {
       <li>
         <button onClick={goBack}>Back</button>
       </li>
+      <li className="account">Account</li>
     </ul>
     </div>
   );

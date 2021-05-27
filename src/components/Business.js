@@ -1,8 +1,18 @@
+import './Business.css'
+
 const Business = () => {
 
 
     return(
-        <h1>Business</h1>
+        <>
+        <div className="Business">
+        <ul>
+           <li> <img src="https://www.homestratosphere.com/wp-content/uploads/2018/07/types-of-coffee-glasses-072618.jpg" width="50" height="50"></img></li>
+           <li> <img src="https://www.homestratosphere.com/wp-content/uploads/2018/07/types-of-coffee-glasses-072618.jpg" width="50" height="50"></img></li>
+           <li> <img src="https://www.homestratosphere.com/wp-content/uploads/2018/07/types-of-coffee-glasses-072618.jpg" width="50" height="50"></img></li>
+        </ul>
+        </div>
+        </>
     )
 }
 export default Business; 
