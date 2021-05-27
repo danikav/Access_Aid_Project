@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Map from './components/Map';
 import NavBar from './components/NavBar';
-import Business from './components/Business';
+import BusinessList from './components/BusinessList';
 import SearchBar from './components/SearchBar';
 import Home from "./components/Home";
 import ErrorPage from './components/ErrorPage';
@@ -17,7 +17,7 @@ function App() {
     <SearchBar />
         <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/businesses" component={Business} />
+        <Route path="/businesses" component={BusinessList} />
         <Route
           path="/resources" component={Resources}
         />

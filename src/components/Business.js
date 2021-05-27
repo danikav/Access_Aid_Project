@@ -1,7 +1,6 @@
-import './Business.css'
+import './Business.css';
 
 const Business = () => {
-
 
     return(
         <>
@@ -21,4 +20,4 @@ const Business = () => {
         </>
     )
 }
-export default Business; 
+export default Business;
