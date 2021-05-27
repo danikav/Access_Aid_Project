@@ -13,6 +13,7 @@ function App() {
     <Router>
     <>
     <NavBar />
+    <SearchBar />
         <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/businesses" component={Business} />
