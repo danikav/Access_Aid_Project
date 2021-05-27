@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Map from './components/Map';
+import MapContainer from './components/MapContainer';
 import NavBar from './components/NavBar';
 import Business from './components/Business';
 import SearchBar from './components/SearchBar';
@@ -13,7 +13,7 @@ function App() {
         <h1>Access Aid</h1>
         <NavBar />
         <Business />
-        <Map />
+        <MapContainer />
         <SearchBar />
     </>
     </Router>
