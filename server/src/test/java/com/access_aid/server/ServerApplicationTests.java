@@ -1,4 +1,4 @@
-package com.codeclan.server;
+package com.access_aid.server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

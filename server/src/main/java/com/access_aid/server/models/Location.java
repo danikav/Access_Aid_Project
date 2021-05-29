@@ -1,4 +1,4 @@
-package com.codeclan.server.models;
+package com.access_aid.server.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
