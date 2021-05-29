@@ -2,3 +2,8 @@
   position: absolute;
   top: 0;
 }
+
+.page-content {
+  position: relative;
+  top: 3rem;
+}

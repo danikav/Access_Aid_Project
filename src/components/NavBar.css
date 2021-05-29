@@ -1,7 +1,7 @@
 .NavBar{
-    position: fixed;
+    position: absolute;
     overflow: hidden;
-    /* top: -10rem; */
+    top: 0rem;
     background-color: #3717A0;
     width: 100%;
 }
