@@ -41,11 +41,20 @@ public class Location {
     @Column(name = "adequate_space")
     private int adequate_space;
 
+    @Column(name = "mobility_access")
+    private int mobility_access;
+
+    @Column(name = "staff_support")
+    private int staff_support;
+
+    @Column(name = "total_score")
+    private int total_score;
+
     @JsonIgnoreProperties({"location"})
     @OneToMany(mappedBy = "location", fetch = FetchType.LAZY)
     private List<User> users;
 
-    public Location(String name, String type, int longitude, int latitude, String description, boolean seating, int high_light_score, int low_noise_score, int adequate_spacee) {
+    public Location(String name, String type, int longitude, int latitude, String description, boolean seating, int high_light_score, int low_noise_score, int adequate_space, int mobility_access, int staff_support, int total_score) {
         this.name = name;
         this.type = type;
         this.longitude = longitude;
@@ -54,7 +63,10 @@ public class Location {
         this.seating = seating;
         this.high_light_score = high_light_score;
         this.low_noise_score = low_noise_score;
-        this.adequate_space = adequate_spacee;
+        this.adequate_space = adequate_space;
+        this.mobility_access = mobility_access;
+        this.staff_support = staff_support;
+        this.
 
 
     }
