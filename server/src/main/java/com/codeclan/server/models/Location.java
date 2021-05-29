@@ -26,17 +26,23 @@ public class Location {
     @Column(name = "latitude")
     private int latitude;
 
-    @Column
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "seating")
+    private boolean seating;
 
     @JsonIgnoreProperties({"location"})
     @OneToMany(mappedBy = "location", fetch = FetchType.LAZY)
     private List<User> users;
 
-    public Location(String name, String type, int longitude, int latitude) {
+    public Location(String name, String type, int longitude, int latitude, String description, boolean seating) {
         this.name = name;
         this.type = type;
         this.longitude = longitude;
         this.latitude = latitude;
+        this.description = description;
+        this.seating = seating;
     }
 
     public Location() {
