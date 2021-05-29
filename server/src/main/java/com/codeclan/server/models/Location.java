@@ -66,7 +66,7 @@ public class Location {
         this.adequate_space = adequate_space;
         this.mobility_access = mobility_access;
         this.staff_support = staff_support;
-        this.
+        this.total_score = total_score;
 
 
     }
