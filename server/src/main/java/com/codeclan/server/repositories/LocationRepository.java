@@ -1,4 +1,7 @@
 package com.codeclan.server.repositories;
 
-public class LocationRepository {
+import com.codeclan.server.models.Location;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public class LocationRepository extends JpaRepositories<Location, Long> {
 }
