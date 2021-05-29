@@ -14,8 +14,8 @@ public class LocationController {
     @Autowired
     LocationRepository locationRepository;
 
-//    @GetMapping(value = "/locations")
-//    public ResponseEntity getAllLocations{
-//        return new Entity()
-//    }
+    @GetMapping(value = "/locations")
+    public ResponseEntity getAllLocations{
+        return List<Location> locationRepository.findAll();
+    }
 }
