@@ -1,10 +1,15 @@
 .NavBar{
-    background-color: purple;
+    position: fixed;
+    overflow: hidden;
+    /* top: -10rem; */
+    background-color: #3717A0;
+    width: 100%;
 }
 
 .NavBar li {
     display: inline;
     margin-right:50px;
+    padding: 0;
 }
 
 .NavBar li a {

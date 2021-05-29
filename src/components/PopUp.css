@@ -1,0 +1,43 @@
+.popup-container {
+  position: relative;
+  top: -29rem;
+  left: 1rem;
+
+  width: 30rem;
+  padding: 2rem;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.close-button {
+  position: relative;
+  left: 28rem;
+  top: -0.5rem;
+  z-index: 10;
+
+  cursor:pointer;
+  
+  display: inline;
+  box-sizing: border-box;
+  width: 25px;
+  height: 25px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #222222;
+  border-radius: 100%;
+  /* x within the circle */
+  background: -webkit-linear-gradient(-45deg, transparent 0%, transparent 46%, #b8b8b8 46%, #b8b8b8 56%, transparent 56%, transparent 100%),
+    -webkit-linear-gradient(45deg, transparent 0%, transparent 46%, #b8b8b8 46%, #b8b8b8 56%, transparent 56%, transparent 100%);
+  background-color: #222222;
+  transition: all 0.1s ease-in-out;
+}
+
+.business-text {
+  position: relative;
+  top: -4rem;
+}

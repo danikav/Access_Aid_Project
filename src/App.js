@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import MapContainer from './components/MapContainer';
 import NavBar from './components/NavBar';
 import Business from './components/Business';
 import SearchBar from './components/SearchBar';
@@ -13,7 +12,7 @@ function App() {
   return (
     <>
     <Router>
-      <NavBar />
+      <NavBar className="nav-bar" />
       <SearchBar />
       <Switch>
         <Route exact path="/" component={Home} />
@@ -22,7 +21,7 @@ function App() {
         <Route component={ErrorPage} />
       </Switch>
     </Router>
-    <MapContainer />
+    
     </>
   );
 }
