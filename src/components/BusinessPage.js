@@ -1,5 +1,6 @@
 function BusinessPage() {
   return (
+    <>
     <div className="business">
       <img className="business-image" src="https://wwwcdn.ithaca.edu/sites/default/files/styles/max_2600x2600/public/2020-08/edinburgh.jpeg?itok=t_48rAQh"></img>
       <div className="business-info">
@@ -15,6 +16,10 @@ function BusinessPage() {
         </ul>
       </div>
     </div>
+    <form className="review-form" method="post">
+      <input type="text"></input>
+    </form>
+    </>
   );
 }
 
