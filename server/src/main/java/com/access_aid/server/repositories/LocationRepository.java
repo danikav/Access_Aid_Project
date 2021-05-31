@@ -23,6 +23,9 @@ public interface LocationRepository extends JpaRepository<Location, Long>{
 //    DELETE
 //    void delete(T entity);
 //
+//    DELETE by ID
+//    deleteById(ID id)
+//
 //    Exists? True/False check
 //    boolean exists(ID primaryKey);
 
