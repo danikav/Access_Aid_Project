@@ -6,6 +6,9 @@ const BusinessList = () => {
     <>
       <SearchBar />
       <Business />
+      <Business />
+      <Business />
+      <Business />
     </>
   );
 };
