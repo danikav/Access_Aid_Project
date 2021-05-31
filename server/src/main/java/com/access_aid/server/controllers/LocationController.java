@@ -32,6 +32,7 @@ public class LocationController {
         return new ResponseEntity<>(location, HttpStatus.CREATED);
     }
 
+//  May not be needed
     @GetMapping(value = "/locations/delete")
     public ResponseEntity<Location> deleteLocation(@RequestBody Location location){
         locationRepository.delete(location);

@@ -3,8 +3,10 @@ package com.access_aid.server.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.imageio.ImageIO;
 import javax.persistence.*;
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
