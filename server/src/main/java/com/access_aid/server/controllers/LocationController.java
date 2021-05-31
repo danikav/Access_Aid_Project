@@ -16,7 +16,6 @@ public class LocationController {
     @Autowired
     LocationRepository locationRepository;
 
-//
     @GetMapping(value = "/locations")
     public ResponseEntity <List<Location>> getAllLocations(){
         return new ResponseEntity<>(locationRepository.findAll(), HttpStatus.OK);
@@ -33,17 +32,9 @@ public class LocationController {
         return new ResponseEntity<>(location, HttpStatus.CREATED);
     }
 
-//  May not be needed
-//    @DeleteMapping(value = "/locations/delete")
-//    public ResponseEntity<Location> deleteLocation(@RequestBody Location location){
-//        locationRepository.delete(location);
-//        return new ResponseEntity<>(location, HttpStatus.GONE);
-//    }
-
     @DeleteMapping(value = "/locations/{id}")
     public ResponseEntity<Long> deleteLocationById(@PathVariable Long id){
         locationRepository.deleteById(id);
         return new ResponseEntity<>(id, HttpStatus.GONE);
     }
-
 }

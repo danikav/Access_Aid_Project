@@ -1,4 +1,4 @@
-package com.access_aid.server.models;
-
-public class User {
-}
+//package com.access_aid.server.models;
+//
+//public class User {
+//}
