@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class LocationController {
@@ -22,7 +23,7 @@ public class LocationController {
     }
 
     @GetMapping(value = "/locations/{id}")
-    public ResponseEntity getLocation(@PathVariable Long id){
+    public ResponseEntity<Optional<Location>> getLocation(@PathVariable Long id){
         return new ResponseEntity<>(locationRepository.findById(id), HttpStatus.OK);
     }
 
@@ -33,16 +34,16 @@ public class LocationController {
     }
 
 //  May not be needed
-    @GetMapping(value = "/locations/delete")
-    public ResponseEntity<Location> deleteLocation(@RequestBody Location location){
-        locationRepository.delete(location);
-        return new ResponseEntity<>(location, HttpStatus.GONE);
-    }
+//    @DeleteMapping(value = "/locations/delete")
+//    public ResponseEntity<Location> deleteLocation(@RequestBody Location location){
+//        locationRepository.delete(location);
+//        return new ResponseEntity<>(location, HttpStatus.GONE);
+//    }
 
-    @GetMapping(value = "/locations/delete{id}")
-    public ResponseEntity deleteLocationById(@PathVariable Long id){
+    @DeleteMapping(value = "/locations/{id}")
+    public ResponseEntity<Long> deleteLocationById(@PathVariable Long id){
         locationRepository.deleteById(id);
-        return new ResponseEntity<>(locationRepository.findById(id), HttpStatus.GONE);
+        return new ResponseEntity<>(id, HttpStatus.GONE);
     }
 
 }
