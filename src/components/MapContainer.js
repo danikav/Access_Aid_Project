@@ -7,8 +7,6 @@ const MapContainer = ({ locations, locationsLoaded }) => {
   const [popUpWindow, setPopUpWindow] = useState(false);
   const [selectedMarker, setSelectedMarker] = useState(0);
 
-
-
   if (!locationsLoaded) {
     return <p>Connecting to map data...</p>;
   }
@@ -18,11 +16,10 @@ const MapContainer = ({ locations, locationsLoaded }) => {
   };
 
   const getId = (id) => {
-    console.log(id);
-    const foundLocation = locations.find(location => location.id === id);
-    setSelectedMarker(foundLocation)
+    const foundLocation = locations.find((location) => location.id === id);
+    setSelectedMarker(foundLocation);
     togglePop();
-  }
+  };
 
   const MarkerNode = locations.map((location) => {
     const latitude = location.latitude;
