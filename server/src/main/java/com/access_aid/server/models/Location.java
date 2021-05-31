@@ -7,8 +7,11 @@ import javax.imageio.ImageIO;
 import javax.persistence.*;
 import javax.swing.*;
 import java.awt.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import static java.lang.Integer.sum;
 
 @Entity
 @Table(name = "locations")
@@ -24,14 +27,20 @@ public class Location {
     @Column(name = "type")
     private String type;
 
+//    @Column(name = "image")
+//    private ArrayList <Icon> picture;
+
+//    @Column(name = "image")
+//    private URL picture;
+
     @Column(name = "image")
-    private ArrayList <Icon> picture;
+    private Image picture;
 
     @Column(name = "longitude")
-    private int longitude;
+    private double longitude;
 
     @Column(name = "latitude")
-    private int latitude;
+    private double latitude;
 
     @Column(name = "description")
     private String description;
@@ -60,11 +69,11 @@ public class Location {
     @Column(name = "user_reviews")
     private ArrayList <String> user_reviews;
 
-    @JsonIgnoreProperties({"location"})
-    @OneToMany(mappedBy = "location", fetch = FetchType.LAZY)
-    private List<User> users;
+//    @JsonIgnoreProperties({"location"})
+//    @OneToMany(mappedBy = "location", fetch = FetchType.LAZY)
+//    private List<User> users;
 
-    public Location(String name, String type, ArrayList <Icon> picture, int longitude, int latitude, String description, boolean seating, ArrayList <Integer> high_light_score, ArrayList <Integer> low_noise_score, ArrayList <Integer> adequate_space, ArrayList <Integer> mobility_access, ArrayList <Integer> staff_support, ArrayList <Integer> total_score, ArrayList <String> user_reviews) {
+    public Location(String name, String type, Image picture, double longitude, double latitude, String description, boolean seating, ArrayList <Integer> high_light_score, ArrayList <Integer> low_noise_score, ArrayList <Integer> adequate_space, ArrayList <Integer> mobility_access, ArrayList <Integer> staff_support, ArrayList <Integer> total_score, ArrayList <String> user_reviews) {
         this.name = name;
         this.type = type;
         this.picture = picture;
@@ -79,7 +88,7 @@ public class Location {
         this.staff_support = staff_support;
         this.total_score = total_score;
         this.user_reviews = user_reviews;
-        this.users = new ArrayList<>();
+//        this.users = new ArrayList<>();
 
     }
 
@@ -107,27 +116,27 @@ public class Location {
         this.type = type;
     }
 
-    public ArrayList<Icon> getPicture() {
+    public Image getPicture() {
         return picture;
     }
 
-    public void setPicture(ArrayList<Icon> picture) {
+    public void setPicture(Image picture) {
         this.picture = picture;
     }
 
-    public int getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
-    public int getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
@@ -187,13 +196,13 @@ public class Location {
         this.staff_support = staff_support;
     }
 
-    public ArrayList<Integer> getTotal_score() {
-        return total_score;
-    }
-
-    public void setTotal_score(ArrayList<Integer> total_score) {
-        this.total_score = total_score;
-    }
+//    public ArrayList<Integer> getTotal_score() {
+//        return total_score;
+//    }
+//
+//    public void setTotal_score(ArrayList<Integer> total_score) {
+//        this.total_score = total_score;
+//    }
 
     public ArrayList<String> getUser_reviews() {
         return user_reviews;
@@ -203,11 +212,11 @@ public class Location {
         this.user_reviews = user_reviews;
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
+//    public List<User> getUsers() {
+//        return users;
+//    }
+//
+//    public void setUsers(List<User> users) {
+//        this.users = users;
+//    }
 }
