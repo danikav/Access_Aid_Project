@@ -14,11 +14,7 @@
     margin: 50px;
 }
 
-#dropdown{
-    background-color: #3717A0;
-    color: white;
-    list-style-type: none;
-}
+
 
 .searchbutton{
     background-color: #3717A0;
@@ -30,4 +26,10 @@
 .formcontainer {
     display: flex;
     padding: 0 1%;
+    /* grid-template-columns: 2fr 1fr 1fr; */
+}
+#dropdown{
+    background-color: #3717A0;
+    color: white;
+    list-style-type: none;
 }

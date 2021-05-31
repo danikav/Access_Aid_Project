@@ -24,7 +24,7 @@ const SearchBar = () => {
         //    onChange={(e) => setKeyword(e.target.value)}
           />
          
-          <div class="refinements"><SelectSearch options={options} id="dropdown" placeholder="Choose Refinements" multiple="true" /> </div>
+          <div class="refinements"><SelectSearch options={options} id="dropdown" placeholder="Choose Refinements" multiple="true" printOptions="on-focus"/> </div>
     
           <button type="submit" class="searchbutton">Search</button>
           </form>
