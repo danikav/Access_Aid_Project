@@ -5,5 +5,7 @@
 
 .page-content {
   position: relative;
-  top: 3rem;
+  top: 4rem;
+  margin: auto;
+  width: 960px;
 }
