@@ -3,12 +3,13 @@
   top: -29rem;
   left: 1rem;
 
+  /* width: 53.3rem; */
   width: 30rem;
   padding: 2rem;
 
-  background-color: rgba(255, 255, 255, 0.5);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 
   border: 3px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
