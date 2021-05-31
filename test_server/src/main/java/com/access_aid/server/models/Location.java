@@ -1,7 +1,6 @@
 package com.access_aid.server.models;
 
 import javax.persistence.*;
-import java.awt.*;
 import java.net.URL;
 
 @Entity
@@ -57,12 +56,10 @@ public class Location {
     @Column(name = "user_reviews")
     private String user_reviews;
 
-//  Removed: URL picture_source, Image picture,
     public Location(String name, String type, URL picture_source, double longitude, double latitude, String description, boolean seating, int high_light_score, int low_noise_score, int adequate_space, int mobility_access, int staff_support, String user_reviews) {
         this.name = name;
         this.type = type;
         this.picture_source = picture_source;
-//        this.picture = picture;
         this.longitude = longitude;
         this.latitude = latitude;
         this.description = description;
@@ -111,14 +108,6 @@ public class Location {
     public void setPicture_source(URL picture_source) {
         this.picture_source = picture_source;
     }
-
-//    public Image getPicture() {
-//        return picture;
-//    }
-//
-//    public void setPicture(Image picture) {
-//        this.picture = picture;
-//    }
 
     public double getLongitude() {
         return longitude;
@@ -195,10 +184,6 @@ public class Location {
     public int getTotal_score() {
         return total_score;
     }
-
-//    public void setTotal_score(int total_score) {
-//        this.total_score = total_score;
-//    }
 
     public String getUser_reviews() {
         return user_reviews;
