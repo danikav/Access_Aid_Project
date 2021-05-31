@@ -1,0 +1,21 @@
+.searchbar {
+    flex: 1;
+}
+
+.refinements {
+    background-color: #3717A0;
+    color: white;
+    padding: 100px, 100px, 100px, 100px;
+    flex: 1; 
+    /* margin: 0 1%; */
+}
+.searchbutton{
+    background-color: #3717A0;
+    color: white;
+    flex: 1; 
+    /* margin: 0 1%; */
+}
+.formcontainer {
+    display: flex;
+    padding: 0 1%;
+}
