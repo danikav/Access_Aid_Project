@@ -1,8 +1,10 @@
 package com.access_aid.server.components;
 
 import com.access_aid.server.models.Location;
+import com.access_aid.server.models.Rating;
 import com.access_aid.server.models.User;
 import com.access_aid.server.repositories.LocationRepository;
+import com.access_aid.server.repositories.RatingRepository;
 import com.access_aid.server.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -21,6 +23,9 @@ public class DataLoader implements ApplicationRunner{
 
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    RatingRepository ratingRepository;
 
     public DataLoader() {
 
@@ -105,8 +110,33 @@ public class DataLoader implements ApplicationRunner{
         userRepository.save(user6);
 
         User user7 = new User("Deena", 1984, "ID", location1);
-        userRepository.save(user1);
+        userRepository.save(user7);
+
+        /////////////////////////////////////////////////////
+
+        Rating rating1 = new Rating("1/5/21", "So glad I discovered this place", location1, user1);
+        ratingRepository.save(rating1);
+
+        Rating rating2 = new Rating("4/5/21", "Really enjoyed myself", location1, user2);
+        ratingRepository.save(rating2);
+
+        Rating rating3 = new Rating("5/5/21", "The coffee wasn't great", location2, user3);
+        ratingRepository.save(rating3);
+
+        Rating rating4 = new Rating("7/5/21", "Staff were so rude", location2, user4);
+        ratingRepository.save(rating4);
+
+        Rating rating5 = new Rating("10/5/21", "I really enjoyed the peace and quiet", location3, user5);
+        ratingRepository.save(rating5);
+
+        Rating rating6 = new Rating("11/5/21", "The building was freezing", location3, user6);
+        ratingRepository.save(rating6);
+
+        Rating rating7 = new Rating("13/5/21", "Food was cold", location1, user7);
+        ratingRepository.save(rating7);
+
+        Rating rating8 = new Rating("13/5/21", "I will be back", location2, user1);
+        ratingRepository.save(rating8);
 
     }
-
 }

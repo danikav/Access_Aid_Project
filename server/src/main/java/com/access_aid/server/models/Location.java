@@ -62,7 +62,7 @@ public class Location {
 
     @JsonIgnoreProperties({"location"})
     @OneToMany(mappedBy = "location", fetch = FetchType.LAZY)
-    private List<User> users;
+    private List<Rating> ratings;
 
     public Location(String name, String type, URL picture_source, double longitude, double latitude, String description, boolean seating, ArrayList<Integer> high_light_score, ArrayList <Integer> low_noise_score, ArrayList <Integer> adequate_space, ArrayList <Integer> mobility_access, ArrayList <Integer> staff_support, ArrayList <String> user_reviews) {
 
@@ -85,7 +85,7 @@ public class Location {
         int sum5 = intergeiser(staff_support);
         this.total_score = sum1 + sum2 + sum3 +sum4 + sum5;
         this.user_reviews = user_reviews;
-        this.users = new ArrayList<>();
+        this.ratings = new ArrayList<Rating>();
 
     }
 
@@ -200,6 +200,9 @@ public class Location {
         return total_score;
     }
 
+    public void setTotal_score(int total_score) {
+        this.total_score = total_score;
+    }
 
     public ArrayList <String> getUser_reviews() {
         return user_reviews;
@@ -207,5 +210,13 @@ public class Location {
 
     public void setUser_reviews(ArrayList <String> user_reviews) {
         this.user_reviews = user_reviews;
+    }
+
+    public List<Rating> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(List<Rating> ratings) {
+        this.ratings = ratings;
     }
 }

@@ -3,6 +3,8 @@ package com.access_aid.server.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class User {
 
@@ -20,15 +22,14 @@ public class User {
     private String dc;
 
     @JsonIgnoreProperties({"user"})
-    @ManyToOne
-    @JoinColumn(name = "location_id", nullable = false)
-    private Location location;
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Rating> ratings;
 
     public User(String name, int dob, String dc, Location location) {
         this.name = name;
         this.dob = dob;
         this.dc = dc;
-        this.location = location;
+        this.ratings = new ArrayList<Rating>();
     }
 
     public User() {
@@ -66,11 +67,11 @@ public class User {
         this.dc = dc;
     }
 
-    public Location getLocation() {
-        return location;
+    public List<Rating> getRatings() {
+        return ratings;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setRatings(List<Rating> ratings) {
+        this.ratings = ratings;
     }
 }
