@@ -2,9 +2,11 @@ import './PopUp.css';
 
 const Popup = ({ toggle, location }) => {
   return (
+    <>
     <div className="popup-container">
-      <button className="close-button" onClick={toggle}></button>
-      <div className="business-text">
+    <div className="business-text">
+      <img src={location.picture_source} alt={location.name} className="business-image-cover"></img>
+      
         <h1>{location.name}</h1>
         <p>{location.description}</p>
         <ul>
@@ -15,8 +17,10 @@ const Popup = ({ toggle, location }) => {
           <li>Adequate Space: {location.adequate_space}/5</li>
         </ul>
       </div>
-      <img src={location.picture_source} alt={location.name} className="business-image-cover"></img>
+      
+      <button className="close-button" onClick={toggle}></button>
     </div>
+    </>
   );
 };
 

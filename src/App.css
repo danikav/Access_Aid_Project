@@ -13,5 +13,6 @@
 @media (max-width: 1048px) {
   .page-content {
     width: 90%;
+    min-width: 350px;
   }
 }
