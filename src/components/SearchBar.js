@@ -4,8 +4,11 @@ import './SearchBar.css'
 const SearchBar = () => {
 
   const options = [
-    {name: 'Example1', value: 'sv'},
-    {name: 'Example2', value: 'en'},
+    {name: 'Low noise level', value: 'nl'},
+    {name: 'High light level', value: 'll'},
+    {name: 'Adequate space', value: 'as'},
+    {name: 'Mobility Access', value: 'ma'},
+    {name: 'Staff support', value: 'ss'}
   ]
 
   const BarStyling = {width:"20rem",background:"#F2F1F9", padding:"0.5rem"};
@@ -21,7 +24,7 @@ const SearchBar = () => {
         //    onChange={(e) => setKeyword(e.target.value)}
           />
          
-          <div class="refinements"><SelectSearch options={options} value="sv" name="refinements" placeholder="Choose Refinements" /> </div>
+          <div class="refinements"><SelectSearch options={options} id="dropdown" placeholder="Choose Refinements" multiple="true" /> </div>
     
           <button type="submit" class="searchbutton">Search</button>
           </form>
