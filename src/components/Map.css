@@ -1,5 +1,5 @@
 .map-container {
-  width: inherit;
+  width: 100%;
   height: 30rem;
   border: 3px solid lightgrey;
   margin: auto;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Map, Marker } from 'pigeon-maps';
 import PopUp from './PopUp';
 import './Map.css';
