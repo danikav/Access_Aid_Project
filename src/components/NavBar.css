@@ -6,10 +6,16 @@
     width: 100%;
 }
 
+.NavBar ul {
+    width: 960px;
+    margin: auto;
+    padding: 10px 0 10px 0;
+}
+
 .NavBar li {
     display: inline;
     margin-right:50px;
-    padding: 0;
+    /* border: 1px solid white; */
 }
 
 .NavBar li a {
