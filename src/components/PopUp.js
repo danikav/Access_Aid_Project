@@ -1,11 +1,11 @@
 import './PopUp.css';
 
-const Popup = ({ toggle }) => {
+const Popup = ({ toggle, location }) => {
   return (
     <div className="popup-container">
       <button className="close-button" onClick={toggle}></button>
       <div className="business-text">
-        <h1>Title of business</h1>
+        <h1>{location.name}</h1>
         <p>Information about business</p>
         <ul>
           <li>information</li>
