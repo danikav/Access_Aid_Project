@@ -1,19 +1,24 @@
 .searchbar {
     flex: 1;
+    margin: 50px;
+    margin-left: 110px;
+    border-style: solid;
+    border-color: #3717A0;
+    border-radius: 50px;
 }
 
 .refinements {
     background-color: #3717A0;
     color: white;
-    padding: 100px, 100px, 100px, 100px;
     flex: 1; 
-    /* margin: 0 1%; */
+    margin: 50px;
 }
 .searchbutton{
     background-color: #3717A0;
     color: white;
     flex: 1; 
-    /* margin: 0 1%; */
+    margin: 50px;
+    margin-right: 110px;
 }
 .formcontainer {
     display: flex;
