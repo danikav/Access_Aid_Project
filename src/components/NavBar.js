@@ -20,6 +20,9 @@ const NavBar = () => {
         <li>
           <Link to="/resources">Resources</Link>
         </li>
+        <li>
+          <Link to="/mock-business">Mock Business</Link>
+        </li>
         {/* <li>
           <button onClick={goBack}>Back</button>
         </li> */}
