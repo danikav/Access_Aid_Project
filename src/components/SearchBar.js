@@ -1,4 +1,4 @@
-import SelectSearch from 'react-select-search';
+import StyledSelectSearch from './StyledSelectSearch'
 import './SearchBar.css'
 
 const SearchBar = () => {
@@ -11,22 +11,20 @@ const SearchBar = () => {
     {name: 'Staff support', value: 'ss'}
   ]
 
-  const BarStyling = {width:"20rem",background:"#F2F1F9", padding:"0.5rem"};
   return (
           <>
           <form class="formcontainer">
-          <input 
-           style={BarStyling}
-           key="random1"
-           class="searchbar"
-        //    value={keyword}
-           placeholder={"What are you looking for?"}
-        //    onChange={(e) => setKeyword(e.target.value)}
-          />
-         
-          <div class="refinements"><SelectSearch options={options} id="dropdown" placeholder="Choose Refinements" multiple="true" printOptions="on-focus"/> </div>
-    
-          <button type="submit" class="searchbutton">Search</button>
+            <input 
+            key="random1"
+            class="searchbar"
+          //    value={keyword}
+            placeholder={"What are you looking for?"}
+          //    onChange={(e) => setKeyword(e.target.value)}
+            />
+          
+            <div class="refinements"><StyledSelectSearch options={options} closeOnSelect={false} id="dropdown" placeholder="Choose Refinements" multiple="true" printOptions="on-focus"/> </div>
+      
+            <button type="submit" class="searchbutton">Search</button>
           </form>
           </>
         );

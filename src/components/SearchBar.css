@@ -1,35 +1,46 @@
 .searchbar {
-    flex: 1;
-    margin: 50px;
-    margin-left: 110px;
+    background:"#F2F1F9";
     border-style: solid;
     border-color: #3717A0;
     border-radius: 50px;
+    grid-area: search;
+    padding: 0 2em;
 }
 
 .refinements {
-    background-color: #3717A0;
-    color: white;
-    flex: 1; 
-    margin: 50px;
+    /* background-color: #3717A0; */
+    color: white; 
+    grid-area: select;
 }
-
-
 
 .searchbutton{
     background-color: #3717A0;
-    color: white;
-    flex: 1; 
-    margin: 50px;
-    margin-right: 110px;
+    color: white; 
+    grid-area: button;
+    appearance: none;
+    border-radius: 8px;
+    box-shadow: none;
+    border: none;
 }
+
 .formcontainer {
-    display: flex;
-    padding: 0 1%;
+    margin: 1em 0;
+    display: grid;
+    grid-template-areas: 'search search search select select button';
+    /* align-items: center; */
+    /* padding: 0 1%; */
+    gap: 1em;
     /* grid-template-columns: 2fr 1fr 1fr; */
 }
-#dropdown{
+
+.formcontainer > * {
+    width: 100%;
+    box-sizing: border-box;
+    /* min-height: 40px; */
+}
+
+/* #dropdown{
     background-color: #3717A0;
     color: white;
     list-style-type: none;
-}
+} */
