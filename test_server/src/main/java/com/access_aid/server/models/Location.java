@@ -67,7 +67,7 @@ public class Location {
 //    @OneToMany(mappedBy = "location", fetch = FetchType.LAZY)
 //    private List<User> users;
 
-    public Location(String name, String type, URL picture, double longitude, double latitude, String description, boolean seating, int high_light_score, int low_noise_score, int adequate_space, int mobility_access, int staff_support, int total_score, String user_reviews) {
+    public Location(String name, String type, URL picture, double longitude, double latitude, String description, boolean seating, int high_light_score, int low_noise_score, int adequate_space, int mobility_access, int staff_support, String user_reviews) {
         this.name = name;
         this.type = type;
         this.picture = picture;
@@ -80,7 +80,7 @@ public class Location {
         this.adequate_space = adequate_space;
         this.mobility_access = mobility_access;
         this.staff_support = staff_support;
-        this.total_score = total_score;
+        this.total_score = high_light_score + low_noise_score + adequate_space + mobility_access + staff_support;
         this.user_reviews = user_reviews;
 //        this.users = new ArrayList<>();
 
@@ -198,11 +198,11 @@ public class Location {
         this.total_score = total_score;
     }
 
-    public String getUser_reviews() {
-        return user_reviews;
-    }
-
-    public void setUser_reviews(String user_reviews) {
-        this.user_reviews = user_reviews;
-    }
+//    public String getUser_reviews() {
+//        return user_reviews;
+//    }
+//
+//    public void setUser_reviews(String user_reviews) {
+//        this.user_reviews = user_reviews;
+//    }
 }
