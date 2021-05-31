@@ -1,12 +1,12 @@
 import Business from './Business';
+import SearchBar from './SearchBar';
 
 const BusinessList = () => {
-
-
-    return(
-        <>
-        <Business />
-        </>
-    )
-}
-export default BusinessList; 
+  return (
+    <>
+      <SearchBar />
+      <Business />
+    </>
+  );
+};
+export default BusinessList;

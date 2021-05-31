@@ -1,4 +1,15 @@
-.Business li{
-    display: flex;
+.business {
+  display: flex;
 }
 
+.business-image {
+  width:250px;
+  height:250px; 
+  object-fit:cover;
+}
+
+.business-info {
+  position: relative;
+  top: -1rem;
+  margin-left: 1rem;
+}
