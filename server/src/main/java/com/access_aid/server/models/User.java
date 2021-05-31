@@ -25,7 +25,7 @@ public class User {
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Rating> ratings;
 
-    public User(String name, int dob, String dc, Location location) {
+    public User(String name, int dob, String dc) {
         this.name = name;
         this.dob = dob;
         this.dc = dc;

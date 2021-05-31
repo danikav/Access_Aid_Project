@@ -39,32 +39,11 @@ public class Location {
     @Column(name = "seating")
     private boolean seating;
 
-    @Column(name = "high_light_score")
-    private ArrayList<Integer> high_light_score;
-
-    @Column(name = "low_noise_score")
-    private ArrayList <Integer> low_noise_score;
-
-    @Column(name = "adequate_space")
-    private ArrayList <Integer> adequate_space;
-
-    @Column(name = "mobility_access")
-    private ArrayList <Integer> mobility_access;
-
-    @Column(name = "staff_support")
-    private ArrayList <Integer> staff_support;
-
-    @Column(name = "total_score")
-    private int total_score;
-
-    @Column(name = "user_reviews")
-    private ArrayList <String> user_reviews;
-
     @JsonIgnoreProperties({"location"})
     @OneToMany(mappedBy = "location", fetch = FetchType.LAZY)
     private List<Rating> ratings;
 
-    public Location(String name, String type, URL picture_source, double longitude, double latitude, String description, boolean seating, ArrayList<Integer> high_light_score, ArrayList <Integer> low_noise_score, ArrayList <Integer> adequate_space, ArrayList <Integer> mobility_access, ArrayList <Integer> staff_support, ArrayList <String> user_reviews) {
+    public Location(String name, String type, URL picture_source, double longitude, double latitude, String description, boolean seating) {
 
         this.name = name;
         this.type = type;
@@ -73,18 +52,6 @@ public class Location {
         this.latitude = latitude;
         this.description = description;
         this.seating = seating;
-        this.high_light_score = high_light_score;
-        this.low_noise_score = low_noise_score;
-        this.adequate_space = adequate_space;
-        this.mobility_access = mobility_access;
-        this.staff_support = staff_support;
-        int sum1 = intergeiser(high_light_score);
-        int sum2 = intergeiser(low_noise_score);
-        int sum3 = intergeiser(adequate_space);
-        int sum4 = intergeiser(mobility_access);
-        int sum5 = intergeiser(staff_support);
-        this.total_score = sum1 + sum2 + sum3 +sum4 + sum5;
-        this.user_reviews = user_reviews;
         this.ratings = new ArrayList<Rating>();
 
     }
@@ -154,62 +121,6 @@ public class Location {
 
     public void setSeating(boolean seating) {
         this.seating = seating;
-    }
-
-    public ArrayList <Integer> getHigh_light_score() {
-        return high_light_score;
-    }
-
-    public void setHigh_light_score(ArrayList <Integer> high_light_score) {
-        this.high_light_score = high_light_score;
-    }
-
-    public ArrayList <Integer> getLow_noise_score() {
-        return low_noise_score;
-    }
-
-    public void setLow_noise_score(ArrayList <Integer> low_noise_score) {
-        this.low_noise_score = low_noise_score;
-    }
-
-    public ArrayList <Integer> getAdequate_space() {
-        return adequate_space;
-    }
-
-    public void setAdequate_space(ArrayList <Integer> adequate_space) {
-        this.adequate_space = adequate_space;
-    }
-
-    public ArrayList <Integer> getMobility_access() {
-        return mobility_access;
-    }
-
-    public void setMobility_access(ArrayList <Integer> mobility_access) {
-        this.mobility_access = mobility_access;
-    }
-
-    public ArrayList <Integer> getStaff_support() {
-        return staff_support;
-    }
-
-    public void setStaff_support(ArrayList <Integer> staff_support) {
-        this.staff_support = staff_support;
-    }
-
-    public int getTotal_score() {
-        return total_score;
-    }
-
-    public void setTotal_score(int total_score) {
-        this.total_score = total_score;
-    }
-
-    public ArrayList <String> getUser_reviews() {
-        return user_reviews;
-    }
-
-    public void setUser_reviews(ArrayList <String> user_reviews) {
-        this.user_reviews = user_reviews;
     }
 
     public List<Rating> getRatings() {
