@@ -1,7 +1,9 @@
 package com.access_aid.server.components;
 
 import com.access_aid.server.models.Location;
+import com.access_aid.server.models.User;
 import com.access_aid.server.repositories.LocationRepository;
+import com.access_aid.server.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -16,6 +18,9 @@ public class DataLoader implements ApplicationRunner{
 
     @Autowired
     LocationRepository locationRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     public DataLoader() {
 
@@ -78,6 +83,30 @@ public class DataLoader implements ApplicationRunner{
 //        Removed: url3, image3
         Location location3 = new Location("CostaBucks", "chain coffee shop", url3, 55.950398, -3.186646, "An upmarket coffee shop found on the Royal Mile", true, hl3, ln3, as3, mb3, ss3, ur3);
         locationRepository.save(location3);
+
+        /////////////////////////////////////////////////////
+
+        User user1 = new User("Bob", 1986, "ASD", location1);
+        userRepository.save(user1);
+
+        User user2 = new User("Tifa", 1992, "MD", location2);
+        userRepository.save(user2);
+
+        User user3 = new User("Celes", 1979, "VI", location3);
+        userRepository.save(user3);
+
+        User user4 = new User("Frank", 1983, "ID", location1);
+        userRepository.save(user4);
+
+        User user5 = new User("Sue", 1968, "MH", location2);
+        userRepository.save(user5);
+
+        User user6 = new User("Nathan", 1986, "VI", location3);
+        userRepository.save(user6);
+
+        User user7 = new User("Deena", 1984, "ID", location1);
+        userRepository.save(user1);
+
     }
 
 }

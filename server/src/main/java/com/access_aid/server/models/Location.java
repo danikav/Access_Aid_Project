@@ -1,5 +1,7 @@
 package com.access_aid.server.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.net.URL;
 import java.util.ArrayList;
@@ -25,9 +27,6 @@ public class Location {
     @Column(name = "pictureSource")
     private URL picture_source;
 
-//    @Column(name = "picture")
-//    private Image picture;
-
     @Column(name = "longitude")
     private double longitude;
 
@@ -39,30 +38,6 @@ public class Location {
 
     @Column(name = "seating")
     private boolean seating;
-
-//    @Column(name = "high_light_score")
-//    private int high_light_score;
-//
-//    @Column(name = "low_noise_score")
-//    private int low_noise_score;
-//
-//    @Column(name = "adequate_space")
-//    private int adequate_space;
-//
-//    @Column(name = "mobility_access")
-//    private int mobility_access;
-//
-//    @Column(name = "staff_support")
-//    private int staff_support;
-//
-//    @Column(name = "total_score")
-//    private int total_score;
-
-//    @Column(name = "user_reviews")
-//    private String user_reviews;
-
-//    ///////////////////////////////////////////////////////
-
 
     @Column(name = "high_light_score")
     private ArrayList<Integer> high_light_score;
@@ -85,18 +60,15 @@ public class Location {
     @Column(name = "user_reviews")
     private ArrayList <String> user_reviews;
 
-//    @JsonIgnoreProperties({"location"})
-//    @OneToMany(mappedBy = "location", fetch = FetchType.LAZY)
-//    private List<User> users;
+    @JsonIgnoreProperties({"location"})
+    @OneToMany(mappedBy = "location", fetch = FetchType.LAZY)
+    private List<User> users;
 
-//    ///////////////////////////////////////////////////////////
-
-    //  Removed: Image picture,
     public Location(String name, String type, URL picture_source, double longitude, double latitude, String description, boolean seating, ArrayList<Integer> high_light_score, ArrayList <Integer> low_noise_score, ArrayList <Integer> adequate_space, ArrayList <Integer> mobility_access, ArrayList <Integer> staff_support, ArrayList <String> user_reviews) {
+
         this.name = name;
         this.type = type;
         this.picture_source = picture_source;
-//        this.picture = picture;
         this.longitude = longitude;
         this.latitude = latitude;
         this.description = description;
@@ -113,6 +85,7 @@ public class Location {
         int sum5 = intergeiser(staff_support);
         this.total_score = sum1 + sum2 + sum3 +sum4 + sum5;
         this.user_reviews = user_reviews;
+        this.users = new ArrayList<>();
 
     }
 
@@ -150,14 +123,6 @@ public class Location {
     public void setPicture_source(URL picture_source) {
         this.picture_source = picture_source;
     }
-
-//    public Image getPicture() {
-//        return picture;
-//    }
-//
-//    public void setPicture(Image picture) {
-//        this.picture = picture;
-//    }
 
     public double getLongitude() {
         return longitude;
@@ -235,9 +200,6 @@ public class Location {
         return total_score;
     }
 
-//    public void setTotal_score(int total_score) {
-//        this.total_score = total_score;
-//    }
 
     public ArrayList <String> getUser_reviews() {
         return user_reviews;
