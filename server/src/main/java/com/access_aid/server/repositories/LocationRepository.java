@@ -7,6 +7,8 @@ public interface LocationRepository extends JpaRepository<Location, Long>{
 
 //    Pre-set generic CRUD operations for use in controller (Auto with JpaRepo)
 
+//    Note Use of Optional where null response is possible
+
 //    SAVE/UPDATE
 //    <S extends T> S save(S entity);
 //    NB. CrudRepository has only save but it acts as update as well if used on taken ID

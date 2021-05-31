@@ -25,7 +25,7 @@ public class Location {
     private String type;
 
     @Column(name = "image")
-    private Icon picture;
+    private ArrayList <Icon> picture;
 
     @Column(name = "longitude")
     private int longitude;
@@ -40,22 +40,22 @@ public class Location {
     private boolean seating;
 
     @Column(name = "high_light_score")
-    private int high_light_score;
+    private ArrayList <Integer> high_light_score;
 
     @Column(name = "low_noise_score")
-    private int low_noise_score;
+    private ArrayList <Integer> low_noise_score;
 
     @Column(name = "adequate_space")
-    private int adequate_space;
+    private ArrayList <Integer> adequate_space;
 
     @Column(name = "mobility_access")
-    private int mobility_access;
+    private ArrayList <Integer> mobility_access;
 
     @Column(name = "staff_support")
-    private int staff_support;
+    private ArrayList <Integer> staff_support;
 
     @Column(name = "total_score")
-    private int total_score;
+    private ArrayList <Integer> total_score;
 
     @Column(name = "user_reviews")
     private ArrayList <String> user_reviews;
@@ -64,7 +64,7 @@ public class Location {
     @OneToMany(mappedBy = "location", fetch = FetchType.LAZY)
     private List<User> users;
 
-    public Location(String name, String type, Icon picture, int longitude, int latitude, String description, boolean seating, int high_light_score, int low_noise_score, int adequate_space, int mobility_access, int staff_support, int total_score, ArrayList <String> user_reviews) {
+    public Location(String name, String type, ArrayList <Icon> picture, int longitude, int latitude, String description, boolean seating, ArrayList <Integer> high_light_score, ArrayList <Integer> low_noise_score, ArrayList <Integer> adequate_space, ArrayList <Integer> mobility_access, ArrayList <Integer> staff_support, ArrayList <Integer> total_score, ArrayList <String> user_reviews) {
         this.name = name;
         this.type = type;
         this.picture = picture;
@@ -81,9 +81,6 @@ public class Location {
         this.user_reviews = user_reviews;
         this.users = new ArrayList<>();
 
-    }
-
-    public Location() {
     }
 
     public Long getId() {
@@ -110,11 +107,11 @@ public class Location {
         this.type = type;
     }
 
-    public Icon getPicture() {
+    public ArrayList<Icon> getPicture() {
         return picture;
     }
 
-    public void setPicture(Icon picture) {
+    public void setPicture(ArrayList<Icon> picture) {
         this.picture = picture;
     }
 
@@ -150,51 +147,51 @@ public class Location {
         this.seating = seating;
     }
 
-    public int getHigh_light_score() {
+    public ArrayList<Integer> getHigh_light_score() {
         return high_light_score;
     }
 
-    public void setHigh_light_score(int high_light_score) {
+    public void setHigh_light_score(ArrayList<Integer> high_light_score) {
         this.high_light_score = high_light_score;
     }
 
-    public int getLow_noise_score() {
+    public ArrayList<Integer> getLow_noise_score() {
         return low_noise_score;
     }
 
-    public void setLow_noise_score(int low_noise_score) {
+    public void setLow_noise_score(ArrayList<Integer> low_noise_score) {
         this.low_noise_score = low_noise_score;
     }
 
-    public int getAdequate_space() {
+    public ArrayList<Integer> getAdequate_space() {
         return adequate_space;
     }
 
-    public void setAdequate_space(int adequate_space) {
+    public void setAdequate_space(ArrayList<Integer> adequate_space) {
         this.adequate_space = adequate_space;
     }
 
-    public int getMobility_access() {
+    public ArrayList<Integer> getMobility_access() {
         return mobility_access;
     }
 
-    public void setMobility_access(int mobility_access) {
+    public void setMobility_access(ArrayList<Integer> mobility_access) {
         this.mobility_access = mobility_access;
     }
 
-    public int getStaff_support() {
+    public ArrayList<Integer> getStaff_support() {
         return staff_support;
     }
 
-    public void setStaff_support(int staff_support) {
+    public void setStaff_support(ArrayList<Integer> staff_support) {
         this.staff_support = staff_support;
     }
 
-    public int getTotal_score() {
+    public ArrayList<Integer> getTotal_score() {
         return total_score;
     }
 
-    public void setTotal_score(int total_score) {
+    public void setTotal_score(ArrayList<Integer> total_score) {
         this.total_score = total_score;
     }
 
