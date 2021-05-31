@@ -1,17 +1,7 @@
 package com.access_aid.server.models;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-import javax.imageio.ImageIO;
 import javax.persistence.*;
-import javax.swing.*;
-import java.awt.*;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-
-import static java.lang.Integer.sum;
 
 @Entity
 @Table(name = "locations")
@@ -62,10 +52,6 @@ public class Location {
 
     @Column(name = "user_reviews")
     private String user_reviews;
-
-//    @JsonIgnoreProperties({"location"})
-//    @OneToMany(mappedBy = "location", fetch = FetchType.LAZY)
-//    private List<User> users;
 
     public Location(String name, String type, URL picture, double longitude, double latitude, String description, boolean seating, int high_light_score, int low_noise_score, int adequate_space, int mobility_access, int staff_support, String user_reviews) {
         this.name = name;
@@ -198,11 +184,4 @@ public class Location {
         this.total_score = total_score;
     }
 
-//    public String getUser_reviews() {
-//        return user_reviews;
-//    }
-//
-//    public void setUser_reviews(String user_reviews) {
-//        this.user_reviews = user_reviews;
-//    }
 }
