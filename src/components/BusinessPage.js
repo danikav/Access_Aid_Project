@@ -27,6 +27,19 @@ function BusinessPage() {
         </div>
 
         <div>
+          Light level
+          <br />
+          <select id="rating-light" name="rating-light" required>
+            <option selected disabled>Make a selection</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <div>
           Noise level
           <br />
           <select id="rating-noise" name="rating-noise" required>
@@ -40,9 +53,35 @@ function BusinessPage() {
         </div>
 
         <div>
-          Space
+          Space availability
           <br />
           <select id="rating-space" name="rating-space" required>
+            <option selected disabled>Make a selection</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <div>
+          Mobility access
+          <br />
+          <select id="rating-access" name="rating-access" required>
+            <option selected disabled>Make a selection</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+
+        <div>
+          Staff support
+          <br />
+          <select id="rating-staff" name="rating-staff" required>
             <option selected disabled>Make a selection</option>
             <option>1</option>
             <option>2</option>
