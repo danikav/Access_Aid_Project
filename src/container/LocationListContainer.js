@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import LocationListItem from '../components/LocationListItem';
 import SearchBar from '../components/SearchBar';
@@ -21,10 +21,10 @@ const LocationList = ({ locations, locationsLoaded }) => {
   }, [searchTerm, locations]);
 
   const locationListItemNode = filteredLocations.map((item) => {
-    const link = '/location/' + item.id;
+    const url = '/location/' + item.id;
 
     return (
-      <Link to={link}>
+      <Link to={url}>
         <LocationListItem location={item} key={item.id}></LocationListItem>
       </Link>
     );
