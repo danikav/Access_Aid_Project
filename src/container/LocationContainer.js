@@ -7,7 +7,7 @@ function LocationContainer() {
   const [location, setLocation] = useState({});
 
   useEffect(() => {
-    fetch({ url })
+    fetch(url)
       .then((response) => response.json())
       .then((data) => setLocation(data));
   }, [url]);
@@ -15,12 +15,11 @@ function LocationContainer() {
   return (
     <>
       <div className="location">
-        <img className="location-image" src="https://wwwcdn.ithaca.edu/sites/default/files/styles/max_2600x2600/public/2020-08/edinburgh.jpeg?itok=t_48rAQh" alt="location"></img>
+        <img className="location-image" src={location.picture_source} alt="location"></img>
         <div className="location-info">
-          <h1>{url}</h1>
           <h2>{location.name}</h2>
           <p>Rating: &#9733;&#9733;&#9733;&#9733;&#9734;</p>
-          <p>Description of business here. This may be a few sentences long.</p>
+          <p>{location.description}</p>
           <ul>
             <li>Star rating here.</li>
             <li>Star rating here.</li>
