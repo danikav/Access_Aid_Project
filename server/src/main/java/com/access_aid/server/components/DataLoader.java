@@ -81,7 +81,7 @@ public class DataLoader implements ApplicationRunner{
         locationRepository.save(location12);
 
         URL url13 = new URL("https://petescully.files.wordpress.com/2013/11/city-hall-tavern-oct2013-sm.jpg");
-        Location location13 = new Location("McGargles", "Pub, Bar, Drinks, Different, Alternative", url13, 55.955883, -3.151084, "A pub in Morningside, noted for its £2 pints of Tennants", true);
+        Location location13 = new Location("McGargles", "Pub, Bar, Drinks, Different, Alternative", url13, 55.955883, -3.151084, "A pub in Meadowbank, noted for its £2 pints of Tennants", true);
         locationRepository.save(location13);
 
         URL url14 = new URL("https://pm1.narvii.com/6633/9d3e0a91eb9eabdf4449da577196b48f9e95c967_hq.jpg");
@@ -191,6 +191,7 @@ public class DataLoader implements ApplicationRunner{
 
         Rating rating20 = new Rating("22/5/21", 1, 1, 1, 1, 1, "I saw Harrison in there, ew", location13, user2);
         ratingRepository.save(rating20);
-        
+
+//      Done?
     }
 }
