@@ -20,13 +20,25 @@ const Home = ({locations, locationsLoaded}) => {
   //   }
   // }, [locations])
 
+  const [filteredLocations, setFilteredLocations] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const filterLocations = (searchTerm) => {
+    setFilteredLocations(locations.filter(location => {
+      return location.type.toLowerCase().includes(searchTerm.trim().toLowerCase())
+    }))
+  };
+
+  useEffect(() => {
+    filterLocations(searchTerm)
+  }, [searchTerm, locations])
+
   return (
     <div className="home-container">
       <img src={Logo} alt="logo" className="logo"></img>
       <h1 className="title">Access Aid</h1>
       <h3>Travel aid for the differently abled</h3>
-      <SearchBar />
-      <MapComponent locations={locations} locationsLoaded={locationsLoaded} />
+      <SearchBar handleSubmit={setSearchTerm} />
+      <MapComponent locations={filteredLocations} locationsLoaded={locationsLoaded} />
     </div>
   );
 };
