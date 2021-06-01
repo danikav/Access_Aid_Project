@@ -191,7 +191,6 @@ public class DataLoader implements ApplicationRunner{
 
         Rating rating20 = new Rating("22/5/21", 1, 1, 1, 1, 1, "I saw Harrison in there, ew", location13, user2);
         ratingRepository.save(rating20);
-
-
+        
     }
 }
