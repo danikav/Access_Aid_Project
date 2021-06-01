@@ -18,7 +18,9 @@ const MapComponent = ({ locations, locationsLoaded }) => {
   const getId = (id) => {
     const foundLocation = locations.find((location) => location.id === id);
     setSelectedMarker(foundLocation);
-    togglePop();
+    if (popUpWindow === false){
+      togglePop();
+    }
   };
 
   const MarkerNode = locations.map((location) => {

@@ -11,7 +11,7 @@ const MapPopUp = ({ toggle, location }) => {
           <img src={location.picture_source} alt={location.name} className="location-image-cover"></img>
 
           <Link to={url}>
-            <h1>{location.name}</h1>
+            <h3>{location.name}</h3>
           </Link>
           <p>{location.description}</p>
           <ul>
