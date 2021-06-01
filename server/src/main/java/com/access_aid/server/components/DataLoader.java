@@ -135,7 +135,7 @@ public class DataLoader implements ApplicationRunner{
         Rating rating1 = new Rating("1/5/21", 5, 2, 4, 4, 2, "So glad I discovered this place", location1, user1);
         ratingRepository.save(rating1);
 
-        Rating rating2 = new Rating("4/5/21", 2, 4, 3 ,2, 5, "Really enjoyed myself", location2, user2);
+        Rating rating2 = new Rating("4/5/21", 2, 4, 3, 2, 5, "Really enjoyed myself", location2, user2);
         ratingRepository.save(rating2);
 
         Rating rating3 = new Rating("5/5/21", 5, 1, 3, 3, 2, "The coffee wasn't great", location3, user3);
@@ -144,7 +144,7 @@ public class DataLoader implements ApplicationRunner{
         Rating rating4 = new Rating("7/5/21", 4, 1, 2, 3, 1, "Staff were so rude", location4, user4);
         ratingRepository.save(rating4);
 
-        Rating rating5 = new Rating("10/5/21", 1, 5, 5, 4, 3,  "I really enjoyed the peace and quiet", location5, user5);
+        Rating rating5 = new Rating("10/5/21", 1, 5, 5, 4, 3, "I really enjoyed the peace and quiet", location5, user5);
         ratingRepository.save(rating5);
 
         Rating rating6 = new Rating("11/5/21", 5, 4, 1, 2, 2, "The building was freezing", location6, user6);
@@ -156,13 +156,10 @@ public class DataLoader implements ApplicationRunner{
         Rating rating8 = new Rating("13/5/21", 5, 4, 5, 4, 4, "I will be back", location8, user8);
         ratingRepository.save(rating8);
 
-
-//      /////////////////////////////////////
-
         Rating rating9 = new Rating("29/5/21", 5, 4, 4, 4, 3, "Really loved it here", location9, user1);
         ratingRepository.save(rating9);
 
-        Rating rating10 = new Rating("18/5/21", 2, 1, 2 ,2, 4, "Far too loud!", location10, user2);
+        Rating rating10 = new Rating("18/5/21", 2, 1, 2, 2, 4, "Far too loud!", location10, user2);
         ratingRepository.save(rating10);
 
         Rating rating11 = new Rating("7/5/21", 1, 1, 3, 1, 2, "Hated it", location11, user3);
@@ -171,7 +168,7 @@ public class DataLoader implements ApplicationRunner{
         Rating rating12 = new Rating("30/5/21", 4, 5, 5, 3, 4, "I wish I had known about this place sooner", location12, user4);
         ratingRepository.save(rating12);
 
-        Rating rating13 = new Rating("24/5/21", 3, 4, 1, 1, 2,  "Hard to move around in, very narrow", location13, user5);
+        Rating rating13 = new Rating("24/5/21", 3, 4, 1, 1, 2, "Hard to move around in, very narrow", location13, user5);
         ratingRepository.save(rating13);
 
         Rating rating14 = new Rating("19/5/21", 1, 3, 1, 1, 4, "Very dark, confusing to get around", location14, user6);
@@ -183,5 +180,16 @@ public class DataLoader implements ApplicationRunner{
         Rating rating16 = new Rating("24/5/21", 2, 2, 2, 2, 2, "Should have stayed at home", location16, user8);
         ratingRepository.save(rating16);
 
-    }
+        Rating rating17 = new Rating("6/5/21", 5, 5, 5, 5, 5, "I saw Harrison in there, oh my god *swoon*", location13, user6);
+        ratingRepository.save(rating17);
+
+        Rating rating18 = new Rating("17/5/21", 4, 3, 4, 4, 5, "One of my favourites already", location5, user7);
+        ratingRepository.save(rating18);
+
+        Rating rating19 = new Rating("22/5/21", 3, 2, 2, 2, 3, "Meh", location16, user2);
+        ratingRepository.save(rating19);
+
+        Rating rating20 = new Rating("22/5/21", 1, 1, 1, 1, 1, "I saw Harrison in there, ew", location13, user2);
+        ratingRepository.save(rating20);
+
 }
