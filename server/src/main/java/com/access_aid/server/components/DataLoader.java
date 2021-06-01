@@ -93,7 +93,7 @@ public class DataLoader implements ApplicationRunner{
         locationRepository.save(location15);
 
         URL url16 = new URL("http://1.bp.blogspot.com/-mzebBcMZpDU/V2FCznUj0oI/AAAAAAAAH1g/3fujjOUQXa8NjZpEczaWqykLXB03XguEgCK4B/s1600/Starbucks-vivo%2Bsketch.jpg");
-        Location location8 = new Location("CostaBucks, Inverleith", "Chain, Branded, Predictable, Shite, Boring", url16, 55.966497, -3.213929, "An upmarket coffee shop found in Inverleith", true);
+        Location location16 = new Location("CostaBucks, Inverleith", "Chain, Branded, Predictable, Shite, Boring", url16, 55.966497, -3.213929, "An upmarket coffee shop found in Inverleith", true);
         locationRepository.save(location16);
 
         /////////////////////////////////////////////////////
@@ -172,7 +172,7 @@ public class DataLoader implements ApplicationRunner{
         ratingRepository.save(rating13);
 
         Rating rating14 = new Rating("19/5/21", 1, 3, 1, 1, 4, "Very dark, confusing to get around", location14, user6);
-        ratingRepository.save(rating15);
+        ratingRepository.save(rating14);
 
         Rating rating15 = new Rating("4/5/21", 5, 3, 4, 3, 5, "Thought the staff were really helpful", location15, user7);
         ratingRepository.save(rating15);
@@ -191,5 +191,5 @@ public class DataLoader implements ApplicationRunner{
 
         Rating rating20 = new Rating("22/5/21", 1, 1, 1, 1, 1, "I saw Harrison in there, ew", location13, user2);
         ratingRepository.save(rating20);
-
+    }
 }
