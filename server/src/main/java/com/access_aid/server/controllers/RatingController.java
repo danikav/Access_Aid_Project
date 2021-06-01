@@ -26,13 +26,13 @@ public class RatingController {
         return new ResponseEntity<>(ratingRepository.findById(id), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/locations")
+    @PostMapping(value = "/ratings")
     public ResponseEntity<Rating> postRating(@RequestBody Rating rating){
         ratingRepository.save(rating);
         return new ResponseEntity<>(rating, HttpStatus.CREATED);
     }
 
-    @DeleteMapping(value = "/locations/{id}")
+    @DeleteMapping(value = "/ratings/{id}")
     public ResponseEntity<Long> deleteRatingById(@PathVariable Long id){
         ratingRepository.deleteById(id);
         return new ResponseEntity<>(id, HttpStatus.GONE);

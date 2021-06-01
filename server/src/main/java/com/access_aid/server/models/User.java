@@ -6,6 +6,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name="users")
 public class User {
 
     @Id
@@ -16,7 +18,13 @@ public class User {
     private String name;
 
     @Column(name = "dob")
-    private int dob;
+    private String dob;
+
+    @Column(name = "longitude")
+    private double longitude;
+
+    @Column(name = "latitude")
+    private double latitude;
 
     @Column(name = "dc")
     private String dc;
@@ -25,9 +33,11 @@ public class User {
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private List<Rating> ratings;
 
-    public User(String name, int dob, String dc) {
+    public User(String name, String dob, double longitude, double latitude, String dc) {
         this.name = name;
         this.dob = dob;
+        this.longitude = longitude;
+        this.latitude = latitude;
         this.dc = dc;
         this.ratings = new ArrayList<Rating>();
     }
@@ -51,12 +61,28 @@ public class User {
         this.name = name;
     }
 
-    public int getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(int dob) {
+    public void setDob(String dob) {
         this.dob = dob;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
     public String getDc() {

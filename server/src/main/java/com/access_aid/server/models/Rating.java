@@ -1,6 +1,8 @@
 package com.access_aid.server.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.access_aid.server.models.User;
+import com.access_aid.server.models.Location;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -54,7 +56,7 @@ public class Rating {
         this.adequate_space = adequate_space;
         this.mobility_access = mobility_access;
         this.staff_support = staff_support;
-        this.total_score = high_light_score + low_noise_score + adequate_space + mobility_access + staff_support;
+        this.total_score = (high_light_score + low_noise_score + adequate_space + mobility_access + staff_support) / 5;
         this.user_reviews = user_reviews;
         this.location = location;
         this.user = user;

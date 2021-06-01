@@ -67,28 +67,28 @@ public class DataLoader implements ApplicationRunner{
 
         /////////////////////////////////////////////////////
 
-        User user1 = new User("Bob", 1986, "ASD");
+        User user1 = new User("Bob", "1-3-1986", 55.943721, -3.218266, "ASD");
         userRepository.save(user1);
 
-        User user2 = new User("Tifa", 1992, "MD");
+        User user2 = new User("Tifa", "3-6-1992", 55.939298, -3.187362, "MD");
         userRepository.save(user2);
 
-        User user3 = new User("Celes", 1979, "VI");
+        User user3 = new User("Celes", "2-9-1979", 55.975991, -3.167015, "VI");
         userRepository.save(user3);
 
-        User user4 = new User("Frank", 1983, "ID");
+        User user4 = new User("Frank", "13-11-1983", 55.979849, -3.208611, "ID");
         userRepository.save(user4);
 
-        User user5 = new User("Sue", 1968, "MH");
+        User user5 = new User("Sue", "4-10-1968", 55.956312, -3.137705, "MH");
         userRepository.save(user5);
 
-        User user6 = new User("Nathan", 1986, "VI");
+        User user6 = new User("Nathan", "9-20-1986", 55.932376, -3.137883, "VI");
         userRepository.save(user6);
 
-        User user7 = new User("Deena", 1984, "ID");
+        User user7 = new User("Deena", "18-8-1984", 55.920402, -3.208966, "ID");
         userRepository.save(user7);
 
-        User user8 = new User("Frankie", 1990, "ID");
+        User user8 = new User("Frankie", "26-10-1990", 55.943817, -3.05521, "ID");
         userRepository.save(user8);
 
         /////////////////////////////////////////////////////
