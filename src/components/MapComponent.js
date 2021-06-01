@@ -26,7 +26,7 @@ const MapComponent = ({ locations, locationsLoaded }) => {
     const longitude = location.longitude;
     const coordinates = [longitude, latitude];
 
-    return <Marker width={30} anchor={coordinates} onClick={() => getId(location.id)} key={location.id} className="marker" />;
+    return <Marker width={45} anchor={coordinates} onClick={() => getId(location.id)} key={location.id} color="#3717A0" className="marker" />;
   });
 
   return (
