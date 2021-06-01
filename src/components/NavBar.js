@@ -14,9 +14,6 @@ const NavBar = () => {
         <li>
           <Link to="/resources">Resources</Link>
         </li>
-        <li>
-          <Link to="/mock-business">Mock Business</Link>
-        </li>
         <li className="account">Account</li>
       </ul>
     </div>

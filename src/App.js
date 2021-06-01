@@ -37,9 +37,13 @@ function App() {
             <Route path="/locations">
               <LocationListContainer locations={locations} locationsLoaded={locationsLoaded} />
             </Route>
+            <Route path="/location/:id">
+              <LocationContainer />
+            </Route>
             <Route path="/resources" component={Resources} />
             <Route path="/mock-business" component={LocationContainer} />
             <Route component={ErrorPage} />
+            
           </Switch>
         </div>
       </Router>

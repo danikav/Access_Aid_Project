@@ -21,8 +21,12 @@ const LocationList = ({ locations, locationsLoaded }) => {
   }, [searchTerm, locations]);
 
   const locationListItemNode = filteredLocations.map((item) => {
+    const link = '/location/' + item.id;
+
     return (
+      <Link to={link}>
         <LocationListItem location={item} key={item.id}></LocationListItem>
+      </Link>
     );
   });
 
