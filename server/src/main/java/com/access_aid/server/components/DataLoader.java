@@ -168,7 +168,7 @@ public class DataLoader implements ApplicationRunner{
         Rating rating12 = new Rating("30/5/21", 4, 5, 5, 3, 4, "I wish I had known about this place sooner", location12, user4);
         ratingRepository.save(rating12);
 
-        Rating rating13 = new Rating("24/5/21", 3, 4, 1, 1, 2, "Hard to move around in, very narrow", location13, user5);
+        Rating rating13 = new Rating("24/5/21", 3, 4, 1, 1, 2, "Dark, full of interesting weirdos though", location13, user5);
         ratingRepository.save(rating13);
 
         Rating rating14 = new Rating("19/5/21", 1, 3, 1, 1, 4, "Very dark, confusing to get around", location14, user6);
