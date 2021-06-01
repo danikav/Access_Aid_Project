@@ -53,7 +53,6 @@ public class Location {
         this.description = description;
         this.seating = seating;
         this.ratings = new ArrayList<Rating>();
-
     }
 
     public Location() {
