@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Map, Marker } from 'pigeon-maps';
 import MapPopUp from './MapPopUp';
-import './Map.css';
+import './MapComponent.css';
 
 const MapComponent = ({ locations, locationsLoaded }) => {
   const [popUpWindow, setPopUpWindow] = useState(false);
@@ -26,7 +26,7 @@ const MapComponent = ({ locations, locationsLoaded }) => {
     const longitude = location.longitude;
     const coordinates = [longitude, latitude];
 
-    return <Marker width={30} anchor={coordinates} onClick={() => getId(location.id)} key={location.id} />;
+    return <Marker width={30} anchor={coordinates} onClick={() => getId(location.id)} key={location.id} className="marker" />;
   });
 
   return (

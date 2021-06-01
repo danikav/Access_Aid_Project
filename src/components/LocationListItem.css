@@ -1,14 +1,14 @@
-.business {
+.location {
   display: flex;
 }
 
-.business-image {
+.location-image {
   width:250px;
   height:250px; 
   object-fit:cover;
 }
 
-.business-info {
+.location-info {
   position: relative;
   top: -1rem;
   margin-left: 1rem;

@@ -4,8 +4,8 @@ const MapPopUp = ({ toggle, location }) => {
   return (
     <>
     <div className="popup-container">
-    <div className="business-text">
-      <img src={location.picture_source} alt={location.name} className="business-image-cover"></img>
+    <div className="location-text">
+      <img src={location.picture_source} alt={location.name} className="location-image-cover"></img>
       
         <h1>{location.name}</h1>
         <p>{location.description}</p>
