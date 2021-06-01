@@ -1,30 +1,30 @@
 import './LocationListItem.css';
 
 const LocationListItem = ({ location }) => {
-  let staff_support = 0
-  let mobility_access = 0
-  let low_noise_score = 0
-  let high_light_score = 0
-  let adequate_space = 0
-  let total_score = 0
-  location.ratings.forEach(rating => {
-    staff_support += rating.staff_support
-    mobility_access += rating.mobility_access
-    low_noise_score += rating.low_noise_score
-    high_light_score += rating.high_light_score
-    adequate_space += rating.adequate_space
-    total_score += rating.total_score
+  let staff_support = 0;
+  let mobility_access = 0;
+  let low_noise_score = 0;
+  let high_light_score = 0;
+  let adequate_space = 0;
+  let total_score = 0;
+  location.ratings.forEach((rating) => {
+    staff_support += rating.staff_support;
+    mobility_access += rating.mobility_access;
+    low_noise_score += rating.low_noise_score;
+    high_light_score += rating.high_light_score;
+    adequate_space += rating.adequate_space;
+    total_score += rating.total_score;
   });
-  staff_support = staff_support/location.ratings.length
-  mobility_access = mobility_access/location.ratings.length
-  low_noise_score = low_noise_score/location.ratings.length
-  high_light_score = high_light_score/location.ratings.length
-  adequate_space = adequate_space/location.ratings.length
-  total_score = total_score/location.ratings.length
+  staff_support = staff_support / location.ratings.length;
+  mobility_access = mobility_access / location.ratings.length;
+  low_noise_score = low_noise_score / location.ratings.length;
+  high_light_score = high_light_score / location.ratings.length;
+  adequate_space = adequate_space / location.ratings.length;
+  total_score = total_score / location.ratings.length;
 
   return (
     <>
-      <div className="location">
+      <div className="location-list-item">
         <img className="location-image" src={location.picture_source} alt="location"></img>
         <div className="location-info">
           <h2>{location.name}</h2>

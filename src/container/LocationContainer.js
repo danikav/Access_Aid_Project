@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+import './LocationContainer.css'
+
 function LocationContainer() {
   const { id } = useParams();
   const url = 'http://localhost:8080/api/locations/' + id;
@@ -17,7 +19,7 @@ function LocationContainer() {
     if (location.length) {
       setLocationsLoaded(true);
 
-      let staff_support = 0;
+    let staff_support = 0;
     let mobility_access = 0;
     let low_noise_score = 0;
     let high_light_score = 0;
@@ -43,11 +45,11 @@ function LocationContainer() {
 
   return (
     <>
-      <div className="location">
-        <img className="location-image" src={location.picture_source} alt="location"></img>
+      <div className="location-container">
+        <img className="location-container-image" src={location.picture_source} alt="location"></img>
         <div className="location-info">
           <h2>{location.name}</h2>
-          <p>Rating: &#9733;&#9733;&#9733;&#9733;&#9734;</p>
+          <p>Rating: </p>
           <p>{location.description}</p>
           <ul>
             <li>Star rating here.</li>

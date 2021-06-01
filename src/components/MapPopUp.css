@@ -55,6 +55,8 @@
   height:200px; 
   object-fit:cover;
   position: relative;
+  border: 1px solid #3717a04b;
+  border-radius: 0.6rem;
 
   /* left: 18rem; */
   /* top: -11rem; */

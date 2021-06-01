@@ -1,0 +1,11 @@
+.location-container {
+  display: flex;
+}
+
+.location-container-image {
+  width:400px;
+  height:400px; 
+  object-fit:cover;
+  border: 1px solid #3717a04b;
+  border-radius: 0.75rem;
+}
