@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import MapContainer from './MapContainer';
-import SearchBar from './SearchBar';
+import MapComponent from '../components/MapComponent';
+import SearchBar from '../components/SearchBar';
 import Logo from '../Logo.png';
 import './Home.css';
 
@@ -26,7 +26,7 @@ const Home = () => {
       <h1 className="title">Access Aid</h1>
       <h3>Travel aid for the differently abled</h3>
       <SearchBar />
-      <MapContainer locations={locations} locationsLoaded={locationsLoaded} />
+      <MapComponent locations={locations} locationsLoaded={locationsLoaded} />
     </div>
   );
 };

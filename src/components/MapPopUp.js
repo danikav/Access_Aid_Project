@@ -1,6 +1,6 @@
-import './PopUp.css';
+import './MapPopUp.css';
 
-const Popup = ({ toggle, location }) => {
+const MapPopUp = ({ toggle, location }) => {
   return (
     <>
     <div className="popup-container">
@@ -24,4 +24,4 @@ const Popup = ({ toggle, location }) => {
   );
 };
 
-export default Popup;
+export default MapPopUp;

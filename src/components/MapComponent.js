@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Map, Marker } from 'pigeon-maps';
-import PopUp from './PopUp';
+import MapPopUp from './MapPopUp';
 import './Map.css';
 
-const MapContainer = ({ locations, locationsLoaded }) => {
+const MapComponent = ({ locations, locationsLoaded }) => {
   const [popUpWindow, setPopUpWindow] = useState(false);
   const [selectedMarker, setSelectedMarker] = useState(0);
 
@@ -34,8 +34,8 @@ const MapContainer = ({ locations, locationsLoaded }) => {
       <Map className="map" defaultCenter={[55.9467749, -3.2020009]} defaultZoom={13}>
         {MarkerNode}
       </Map>
-      {popUpWindow ? <PopUp className="popup" toggle={togglePop} location={selectedMarker}></PopUp> : null}
+      {popUpWindow ? <MapPopUp className="popup" toggle={togglePop} location={selectedMarker}></MapPopUp> : null}
     </div>
   );
 };
-export default MapContainer;
+export default MapComponent;

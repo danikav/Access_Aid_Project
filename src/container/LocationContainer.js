@@ -1,4 +1,4 @@
-function BusinessPage() {
+function LocationContainer() {
   return (
     <>
       <div className="business">
@@ -105,4 +105,4 @@ function BusinessPage() {
   );
 }
 
-export default BusinessPage;
+export default LocationContainer;

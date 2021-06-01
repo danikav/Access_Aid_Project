@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import BusinessListItem from './BusinessListItem';
-import SearchBar from './SearchBar';
+import BusinessListItem from '../components/LocationListItem';
+import SearchBar from '../components/SearchBar';
 
 
 const BusinessList = () => {

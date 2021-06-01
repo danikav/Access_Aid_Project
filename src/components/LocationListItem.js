@@ -1,6 +1,6 @@
-import './Business.css';
+import './LocationListItem.css';
 
-const Business = ({ location }) => {
+const LocationListItem = ({ location }) => {
   return (
     <>
       <div className="business">
@@ -21,4 +21,4 @@ const Business = ({ location }) => {
     </>
   );
 };
-export default Business;
+export default LocationListItem;
