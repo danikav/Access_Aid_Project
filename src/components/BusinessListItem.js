@@ -1,20 +1,20 @@
 import './Business.css';
 
-const Business = () => {
+const Business = ({ location }) => {
   return (
     <>
       <div className="business">
-        <img className="business-image" src="https://wwwcdn.ithaca.edu/sites/default/files/styles/max_2600x2600/public/2020-08/edinburgh.jpeg?itok=t_48rAQh" alt="business"></img>
+        <img className="business-image" src={location.picture_source} alt="business"></img>
         <div className="business-info">
-          <h2>Title of Business</h2>
+          <h2>{location.name}</h2>
           <p>Rating: &#9733;&#9733;&#9733;&#9733;&#9734;</p>
-          <p>Description of business here. This may be a few sentences long.</p>
+          <p>{location.description}</p>
           <ul>
-              <li>Star rating here.</li>
-              <li>Star rating here.</li>
-              <li>Star rating here.</li>
-              <li>Star rating here.</li>
-              <li>Star rating here.</li>
+            <li>Staff Support: {location.staff_support}/5</li>
+            <li>Mobility Access: {location.mobility_access}/5</li>
+            <li>Noise Level: {location.low_noise_score}/5</li>
+            <li>Light Level: {location.high_light_score}/5</li>
+            <li>Adequate Space: {location.adequate_space}/5</li>
           </ul>
         </div>
       </div>
