@@ -39,17 +39,17 @@
   transition: all 0.1s ease-in-out;
 }
 
-.business-text {
+.location-text {
   /* display: inline; */
   /* position: relative; */
   /* top: -4rem; */
 }
 
-.business-text h1, ul {
+.location-text h1, ul {
   margin: 0;
 }
 
-.business-image-cover {
+.location-image-cover {
   display: inline;
   width:200px;
   height:200px; 
