@@ -60,6 +60,11 @@
   /* top: -11rem; */
 }
 
+.location-link {
+  color: #3717A0;
+  text-decoration: none;
+}
+
 @media (max-width:430px) {
   .popup-container {
     /* left: 0; */

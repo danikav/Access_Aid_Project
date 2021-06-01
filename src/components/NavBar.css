@@ -28,3 +28,10 @@
     margin-left: 150px;
 
 }
+
+@media (max-width: 1048px) {
+    .NavBar ul {
+      width: 90%;
+      min-width: 350px;
+    }
+  }
