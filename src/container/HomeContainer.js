@@ -19,7 +19,7 @@ const Home = ({ locations, locationsLoaded }) => {
             return sumRating + rating[refinement]
           }, 0) / location.ratings.length) < 3
         })
-      })g
+      })
     );
   };
 
