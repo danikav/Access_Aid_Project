@@ -2,9 +2,9 @@ import StyledSelectSearch from './StyledSelectSearch'
 import {useState} from 'react'
 import './SearchBar.css'
 
-const SearchBar = ({handleChange, searchTerm}) => {
+const SearchBar = ({handleSubmit}) => {
 
-const [formSubmitValue, setFormSubmitValue] = useState("")
+  const [formSubmitValue, setFormSubmitValue] = useState("")
 
   const options = [
     {name: 'Low noise level', value: 'nl'},
@@ -14,9 +14,9 @@ const [formSubmitValue, setFormSubmitValue] = useState("")
     {name: 'Staff support', value: 'ss'}
   ]
 
-  const handleSubmit = (event) => {
+  const onSubmit = (event) => {
     event.preventDefault();
-    handleChange(formSubmitValue)
+    handleSubmit(formSubmitValue)
     setFormSubmitValue("")
   }
 
@@ -27,7 +27,7 @@ const [formSubmitValue, setFormSubmitValue] = useState("")
 
   return (
           <>
-          <form className="formcontainer" onSubmit={handleSubmit}>
+          <form className="formcontainer" onSubmit={onSubmit}>
             <input 
             value ={formSubmitValue}
             className="searchbar"

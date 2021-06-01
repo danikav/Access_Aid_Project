@@ -5,8 +5,8 @@ import SearchBar from '../components/SearchBar';
 
 const BusinessList = ({locations, locationsLoaded}) => {
 
-  const [businesses, setBusinesses] = useState([]);
-  const [filteredBusinesses, setFilteredBusinesses] = useState([]);
+  // const [businesses, setBusinesses] = useState([]);
+  const [filteredLocations, setFilteredLocations] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   // const [locations, setLocations] = useState({});
@@ -19,7 +19,7 @@ const BusinessList = ({locations, locationsLoaded}) => {
   //   fetch('http://localhost:8080/api/locations')
   //     .then((response) => response.json())
   //     .then((data) => {
-  //       setLocations(data);
+  //       // setLocations(data);
   //       setBusinesses(data); 
   //       setFilteredBusinesses(data)});
   // }, []);
@@ -33,24 +33,24 @@ const BusinessList = ({locations, locationsLoaded}) => {
   //   }
   // }, [locations]);
 
-  const filterBusinesses = (formSubmitValue) => {
-    setFilteredBusinesses(businesses.filter(business => {
-      return business.type.includes(formSubmitValue)
-
-
-
-      
+  const filterLocations = (searchTerm) => {
+    setFilteredLocations(locations.filter(location => {
+      return location.type.toLowerCase().includes(searchTerm.trim().toLowerCase())
     }))
-  }; 
+  };
 
-  const businessListItemNode = locations.map((item) => {
+  useEffect(() => {
+    filterLocations(searchTerm)
+  }, [searchTerm, locations])
+
+  const businessListItemNode = filteredLocations.map((item) => {
     return <BusinessListItem location={item} />;
   });
 
 
   return (
     <>
-      <SearchBar handleChange={(formSubmitValue) => filterBusinesses(formSubmitValue)} />
+      <SearchBar handleSubmit={setSearchTerm} />
       {businessListItemNode}
       </>
 
