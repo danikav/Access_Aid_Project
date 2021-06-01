@@ -7,30 +7,32 @@ const BusinessList = () => {
 
   const [businesses, setBusinesses] = useState([]);
   const [filteredBusinesses, setFilteredBusinesses] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:8080/api/locations")
       .then(res => res.json())
-      .then((data) => {setBusinesses(data); setFilteredBusinesses(data);
-        }, []);
-      })
-      
+      .then((data) => {
+        setBusinesses(data); 
+        setFilteredBusinesses(data);
+      });
+      }, [])
 
-  const searchBusinesses = (searchBusiness) => {
-    let foundBusinesses = [];
-    businesses.forEach((business) => {
-      if (business.type.includes(searchBusiness)) {
-        foundBusinesses.push(business);
-      }
-    });
-    setFilteredBusinesses(foundBusinesses);
-    return filteredBusinesses
+  
+  const filterBusinesses = (formSubmitValue) => {
+    setFilteredBusinesses(businesses.filter(business => {
+      return business.type.includes(formSubmitValue)
+
+
+
+      
+    }))
   }; 
 
 
   return (
     <>
-      <SearchBar handleChange={searchBusinesses}/>
+      <SearchBar handleChange={(formSubmitValue) => filterBusinesses(formSubmitValue)} />
       <BusinessListItem />
       <BusinessListItem />
       <BusinessListItem />

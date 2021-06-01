@@ -1,7 +1,10 @@
 import StyledSelectSearch from './StyledSelectSearch'
+import {useState} from 'react'
 import './SearchBar.css'
 
-const SearchBar = ({handleChange}) => {
+const SearchBar = ({handleChange, searchTerm}) => {
+
+const [formSubmitValue, setFormSubmitValue] = useState("")
 
   const options = [
     {name: 'Low noise level', value: 'nl'},
@@ -13,21 +16,28 @@ const SearchBar = ({handleChange}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    handleChange(formSubmitValue)
+    setFormSubmitValue("")
+  }
+
+  const changeSearchTerm = (event) => {
+    setFormSubmitValue(event.target.value)
   }
 
 
   return (
           <>
-          <form class="formcontainer">
+          <form className="formcontainer" onSubmit={handleSubmit}>
             <input 
-            key="random1"
-            class="searchbar"
+            value ={formSubmitValue}
+            className="searchbar"
             placeholder={"What are you looking for?"}
+            onChange={changeSearchTerm}
             />
           
-            <div class="refinements"><StyledSelectSearch options={options} closeOnSelect={false} id="dropdown" placeholder="Choose Refinements" multiple="true" printOptions="on-focus"/> </div>
+            <div className="refinements"><StyledSelectSearch options={options} closeOnSelect={false} id="dropdown" placeholder="Choose Refinements" multiple="true" printOptions="on-focus"/> </div>
       
-            <button type="submit" onClick={handleChange} onSubmit={handleSubmit} class="searchbutton">Search</button>
+            <button type="submit" className="searchbutton">Search</button>
           </form>
           </>
         );
