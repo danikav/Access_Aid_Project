@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
+import Rating from 'react-rating';
 import './MapPopUp.css';
 
 const MapPopUp = ({ toggle, location }) => {
   const url = '/location/' + location.id;
 
-  let total_score = 0;
+  let totalScore = 0;
   location.ratings.forEach((rating) => {
-    total_score += rating.total_score;
+    totalScore += rating.total_score;
   });
-  total_score = total_score / location.ratings.length;
+  totalScore = totalScore / location.ratings.length;
 
   return (
     <>
@@ -19,7 +20,7 @@ const MapPopUp = ({ toggle, location }) => {
           <Link to={url} className="location-link">
             <h3>{location.name}</h3>
           </Link>
-          <p>Total Rating: {total_score}/5</p>
+          <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={totalScore} fractions={2} readonly />
           <p>{location.description}</p>
         </div>
 

@@ -1,3 +1,4 @@
+import Rating from 'react-rating';
 import './LocationListItem.css';
 
 const LocationListItem = ({ location }) => {
@@ -17,14 +18,14 @@ const LocationListItem = ({ location }) => {
         <img className="location-image" src={location.picture_source} alt="location"></img>
         <div className="location-info">
           <h2>{location.name}</h2>
-          <p>Rating: {averages.total_score}/5</p>
+          <p>Rating: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.total_score} fractions={2} readonly /></p>
           <p>{location.description}</p>
           <ul>
-            <li>Staff Support: {averages.staff_support}/5</li>
-            <li>Mobility Access: {averages.mobility_access}/5</li>
-            <li>Noise Level: {averages.low_noise_score}/5</li>
-            <li>Light Level: {averages.high_light_score}/5</li>
-            <li>Adequate Space: {averages.adequate_space}/5</li>
+            <li>Staff Support: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.staff_support} fractions={2} readonly /></li>            
+            <li>Mobility Access: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.mobility_access} fractions={2} readonly /></li>
+            <li>Noise Level: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.low_noise_score} fractions={2} readonly /></li>
+            <li>Light Level: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.high_light_score} fractions={2} readonly /></li>
+            <li>Adequate Space: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.adequate_space} fractions={2} readonly /></li>
           </ul>
         </div>
       </div>

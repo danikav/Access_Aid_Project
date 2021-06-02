@@ -15,6 +15,10 @@ a {
   text-decoration: none;
 }
 
+.rating {
+  color: rgb(233, 173, 10);
+}
+
 @media (max-width: 1048px) {
   .page-content {
     width: 90%;
