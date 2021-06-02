@@ -22,8 +22,6 @@ function LocationContainer({users}) {
     const newDate = new Date()
     newDate.setUTCSeconds(nowFromEpoch)
     submittedReview.date = newDate;
-    const updatedReviews = [...reviews, submittedReview];
-    setReviews(updatedReviews);
     return submittedReview
   }
 
