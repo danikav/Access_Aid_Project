@@ -2,10 +2,18 @@ import './ReviewForm.css';
 import {useState} from 'react';
 import Rating from 'react-rating';
 
-const ReviewForm = ({onFormSubmit}) => {
+
+const ReviewForm = ({onFormSubmit, selectedLocation, users}) => {
 
     const [author, setAuthor] = useState("");
     const [text, setText] = useState(""); 
+    const [noise, setNoise] = useState(0); 
+    const [light, setLight] = useState(0); 
+    const [space, setSpace] = useState(0); 
+    const [mobility, setMobility] = useState(0); 
+    const [support, setSupport] = useState(0); 
+    
+
 
     const handleAuthorChange = (evt) => {		
         setAuthor(evt.target.value);
@@ -15,22 +23,67 @@ const ReviewForm = ({onFormSubmit}) => {
         setText(evt.target.value);
       }
 
+      const handleNoise = (event) => {
+        setNoise(event)
+      }
+
+      const handleSupport = (event) => {
+        setSupport(event)
+      }
+
+      const handleMobility = (event) => {
+        setMobility(event)
+      }
+
+      const handleSpace = (event) => {
+        setSpace(event)
+      }
+
+      const handleLight = (event) => {
+        setLight(event)
+      }
+
       const handleFormSubmit= (evt) => {
         evt.preventDefault();
-        const trimmedAuthor = author.trim();
+        const userIdSubmit = author;
         const trimmedText = text.trim();
-        if (!trimmedText || !trimmedAuthor) {
+        const locationSubmit = selectedLocation.id;
+        const lightSubmit = light;
+        const noiseSubmit = noise;
+        const spaceSubmit = space;
+        const mobilitySubmit = mobility;
+        const supportSubmit = support;
+        const date = "";
+        const totalScore = (noise + space + mobility + support + light)/5;
+        if (!trimmedText) {
           return
         }
 
-        onFormSubmit({						
-            author: trimmedAuthor,
-            text: trimmedText			
+        onFormSubmit({	
+            date: date,					
+            high_light_score: lightSubmit,
+            low_noise_score: noiseSubmit,
+            adequate_space: spaceSubmit,
+            mobility_access: mobilitySubmit,
+            staff_support: supportSubmit,
+            total_score: totalScore,
+            user_reviews: trimmedText,
+            location: {id: locationSubmit},
+            user: {id: userIdSubmit}
           });
+
       
-        setAuthor("");
-        setText("");    
+        setAuthor(null);
+        setText("");
+        setLight(0)    
+        setSupport(0)    
+        setSpace(0)    
+        setMobility(0)    
+        setNoise(0)    
       }
+
+    const userOptionNodes = users.map(({name, id}) => (<option value={id}>{name}</option>))
+    console.log(userOptionNodes)
 
     return(
         <>
@@ -40,169 +93,42 @@ const ReviewForm = ({onFormSubmit}) => {
         <div>
           Your name
           <br />
-          <input type="text" id="name" name="name" placeholder="Name" value={author} onChange={handleAuthorChange} required />
+          <select id="name" name="name" placeholder="Name" value={author} onChange={handleAuthorChange} required>
+            <option selected disabled value={null}>Please select yourself</option>
+            {userOptionNodes}
+          </select>
         </div>
         <br />
 
         <div class="ratings" id="rating-light" name="rating-light">
           Light level <br />
-          <Rating start="0" stop="5" step="1" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
-          {/* <br />
-          <label>One
-         <input type="radio" name="radio" />
-         <span class="checkmark"></span>
-         </label>
-
-        <label>Two
-        <input type="radio" name="radio" />
-        <span class="checkmark"></span>
-        </label>
-
-        <label>Three
-        <input type="radio" name="radio" />
-        <span class="checkmark"></span>
-        </label>
-
-        <label>Four
-        <input type="radio" name="radio" />
-        <span class="checkmark"></span>
-        </label>
-
-        <br />
-          <label>Five
-         <input type="radio" name="radio" />
-         <span class="checkmark"></span>
-         </label> */}
-
+          <Rating initialRating={light} onClick={handleLight} stop="5" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
+          
         </div>
 
          <div class="ratings" id="rating-noise" name="rating-noise">
           Noise level <br />
-          <Rating start="0" stop="5" step="1" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
-          {/* <br />
-          <label>One
-         <input type="radio" name="radio" />
-         <span class="checkmark"></span>
-         </label>
-
-        <label>Two
-        <input type="radio" name="radio" />
-        <span class="checkmark"></span>
-        </label>
-
-        <label>Three
-        <input type="radio" name="radio" />
-        <span class="checkmark"></span>
-        </label>
-
-        <label>Four
-        <input type="radio" name="radio" />
-        <span class="checkmark"></span>
-        </label>
-
-        <br />
-          <label>Five
-         <input type="radio" name="radio" />
-         <span class="checkmark"></span>
-         </label>
-*/}
+          <Rating initialRating={noise} onClick={handleNoise} stop="5" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
+          
         </div>
 
         <div class="ratings" id="rating-space" name="rating-space" >
           Space Level <br />
-          <Rating start="0" stop="5" step="1" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
-          {/* <br />
-          <label>One
-         <input type="radio" name="radio" />
-         <span class="checkmark"></span>
-         </label>
-
-        <label>Two
-        <input type="radio" name="radio" />
-        <span class="checkmark"></span>
-        </label>
-
-        <label>Three
-        <input type="radio" name="radio" />
-        <span class="checkmark"></span>
-        </label>
-
-        <label>Four
-        <input type="radio" name="radio" />
-        <span class="checkmark"></span>
-        </label>
-
-        <br />
-          <label>Five
-         <input type="radio" name="radio" />
-         <span class="checkmark"></span>
-         </label>
-*/}
+          <Rating initialRating={space} onClick={handleSpace} stop="5" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
+          
         </div> 
 
         <div class="ratings" id="rating-access" name="rating-access" >
           Mobility Access <br />
-          <Rating start="0" stop="5" step="1" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
-          {/* <br />
-          <label>One
-         <input type="radio" name="radio" />
-         <span class="checkmark"></span>
-         </label>
-
-        <label>Two
-        <input type="radio" name="radio" />
-        <span class="checkmark"></span>
-        </label>
-
-        <label>Three
-        <input type="radio" name="radio" />
-        <span class="checkmark"></span>
-        </label>
-
-        <label>Four
-        <input type="radio" name="radio" />
-        <span class="checkmark"></span>
-        </label>
-
-        <br />
-          <label>Five
-         <input type="radio" name="radio" />
-         <span class="checkmark"></span>
-         </label>
-*/}
+          <Rating initialRating={mobility} onClick={handleMobility} stop="5" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
+          
         </div> 
 
         <div class="ratings" id="rating-staff" name="rating-staff" >
           Staff Support <br />
-          <Rating start="0" stop="5" step="1" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
-          {/* <br />
-          <label>One
-         <input type="radio" name="radio" />
-         <span class="checkmark"></span>
-         </label>
+          <Rating initialRating={support} onClick={handleSupport} stop="5" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
 
-        <label>Two
-        <input type="radio" name="radio" />
-        <span class="checkmark"></span>
-        </label>
-
-        <label>Three
-        <input type="radio" name="radio" />
-        <span class="checkmark"></span>
-        </label>
-
-        <label>Four
-        <input type="radio" name="radio" />
-        <span class="checkmark"></span>
-        </label>
-
-        <br />
-          <label>Five
-         <input type="radio" name="radio" />
-         <span class="checkmark"></span>
-         </label>*/}
-
-     </div> 
+        </div> 
 
         <div>
           Review

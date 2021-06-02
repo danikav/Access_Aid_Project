@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ReviewForm from '../components/ReviewForm'
-import ReviewsList from '../components/ReviewsList'
+import ReviewForm from '../components/ReviewForm';
+import ReviewsList from '../components/ReviewsList';
+import Request from '../services/RequestService';
 
 import './LocationContainer.css';
 
-function LocationContainer() {
+function LocationContainer({users}) {
   const { id } = useParams();
   const url = 'http://localhost:8080/api/locations/' + id;
   const [location, setLocation] = useState(null);
@@ -14,15 +15,30 @@ function LocationContainer() {
   const [averages, setAverages] = useState(null);
 
   const addReview = (submittedReview) => {
-    submittedReview.id = Date.now();
+    const nowFromEpoch = Date.now()
+    const newDate = new Date()
+    newDate.setUTCSeconds(nowFromEpoch)
+    submittedReview.date = newDate;
     const updatedReviews = [...reviews, submittedReview];
     setReviews(updatedReviews);
+    return submittedReview
   }
 
-  useEffect(() => {
+  const fetchLocation = () => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => setLocation(data));
+  }
+
+  const handlePost = (review) => {
+    const datedReview = addReview(review)
+    const request = new Request();
+    request.post(`http://localhost:8080/api/ratings`, datedReview)
+    .then(() => fetchLocation())
+  }
+
+  useEffect(() => {
+    fetchLocation()
   }, [url]);
 
   useEffect(() => {
@@ -74,7 +90,7 @@ function LocationContainer() {
       <div className="reviews-scroll-box">
         <ReviewsList reviews={reviews} />
       </div>
-      <ReviewForm onFormSubmit={(review) => addReview(review)}/>
+      <ReviewForm users={users} selectedLocation={location} onFormSubmit={(submittedReview) => handlePost(submittedReview)}/>
       
     </>
   );

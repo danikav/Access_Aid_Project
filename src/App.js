@@ -11,12 +11,17 @@ import './App.css';
 
 function App() {
   const [locations, setLocations] = useState([]);
+  const [users, setUsers] = useState([]);
   const [locationsLoaded, setLocationsLoaded] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:8080/api/locations')
       .then((response) => response.json())
       .then((data) => setLocations(data));
+
+      fetch('http://localhost:8080/api/users')
+      .then((response) => response.json())
+      .then((data) => setUsers(data));
   }, []);
 
   useEffect(() => {
@@ -38,7 +43,7 @@ function App() {
               <LocationListContainer locations={locations} locationsLoaded={locationsLoaded} />
             </Route>
             <Route path="/location/:id">
-              <LocationContainer />
+              <LocationContainer users={users} />
             </Route>
             <Route path="/resources" component={Resources} />
             <Route path="/mock-business" component={LocationContainer} />
