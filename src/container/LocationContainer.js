@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import './LocationContainer.css'
+import './LocationContainer.css';
 
 function LocationContainer() {
   const { id } = useParams();
   const url = 'http://localhost:8080/api/locations/' + id;
-  const [location, setLocation] = useState({});
-  const [locationsLoaded, setLocationsLoaded] = useState(false);
+  const [location, setLocation] = useState(null);
+  const [locationLoaded, setLocationLoaded] = useState(false);
+  const [averages, setAverages] = useState(null);
 
   useEffect(() => {
     fetch(url)
@@ -16,32 +17,31 @@ function LocationContainer() {
   }, [url]);
 
   useEffect(() => {
-    if (location.length) {
-      setLocationsLoaded(true);
-
-    let staff_support = 0;
-    let mobility_access = 0;
-    let low_noise_score = 0;
-    let high_light_score = 0;
-    let adequate_space = 0;
-    let total_score = 0;
-    location.ratings.forEach((rating) => {
-      staff_support += rating.staff_support;
-      mobility_access += rating.mobility_access;
-      low_noise_score += rating.low_noise_score;
-      high_light_score += rating.high_light_score;
-      adequate_space += rating.adequate_space;
-      total_score += rating.total_score;
-    });
-    staff_support = staff_support / location.ratings.length;
-    mobility_access = mobility_access / location.ratings.length;
-    low_noise_score = low_noise_score / location.ratings.length;
-    high_light_score = high_light_score / location.ratings.length;
-    adequate_space = adequate_space / location.ratings.length;
-    total_score = total_score / location.ratings.length;
+    if (location && averages) {
+      setLocationLoaded(true);
     }
-    
+  }, [location, averages]);
+
+  useEffect(() => {
+    if (location) {
+      const metrics = ['high_light_score', 'low_noise_score', 'adequate_space', 'mobility_access', 'staff_support', 'total_score'];
+
+      const averages = metrics
+        .map((metric) => {
+          const sum = location.ratings.reduce((acc, rating) => acc + rating[metric], 0);
+          return [metric, sum];
+        })
+        .reduce((acc, [metric, sum]) => {
+          return { ...acc, [metric]: sum / location.ratings.length };
+        }, {});
+
+      setAverages(averages);
+    }
   }, [location]);
+
+  if (!locationLoaded || !averages) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <>
@@ -49,14 +49,14 @@ function LocationContainer() {
         <img className="location-container-image" src={location.picture_source} alt="location"></img>
         <div className="location-info">
           <h2>{location.name}</h2>
-          <p>Rating: </p>
+          <p>Rating: {averages.total_score}/5</p>
           <p>{location.description}</p>
           <ul>
-            <li>Star rating here.</li>
-            <li>Star rating here.</li>
-            <li>Star rating here.</li>
-            <li>Star rating here.</li>
-            <li>Star rating here.</li>
+            <li>Staff Support: {averages.staff_support}/5</li>
+            <li>Mobility Access: {averages.mobility_access}/5</li>
+            <li>Noise Level: {averages.low_noise_score}/5</li>
+            <li>Light Level: {averages.high_light_score}/5</li>
+            <li>Adequate Space: {averages.adequate_space}/5</li>
           </ul>
         </div>
       </div>
