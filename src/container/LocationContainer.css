@@ -11,7 +11,9 @@
 }
 
 .reviews-scroll-box {
-  background-color: lightblue;
+  border: 1px solid #3717a04b;
+  border-radius: 0.75rem;
+  padding: 1rem;
   width: 100%;
   height: 50vh;
   overflow: auto;
