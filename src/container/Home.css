@@ -9,3 +9,7 @@
 .title {
   display: inline;
 }
+
+.home-container {
+  height: 100%;
+}

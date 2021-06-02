@@ -18,7 +18,9 @@ const MapComponent = ({ locations, locationsLoaded }) => {
   const getId = (id) => {
     const foundLocation = locations.find((location) => location.id === id);
     setSelectedMarker(foundLocation);
-    togglePop();
+    if (popUpWindow === false) {
+      togglePop();
+    }
   };
 
   const MarkerNode = locations.map((location) => {
@@ -33,8 +35,8 @@ const MapComponent = ({ locations, locationsLoaded }) => {
     <div className="map-container">
       <Map className="map" defaultCenter={[55.9467749, -3.2020009]} defaultZoom={13}>
         {MarkerNode}
+        {popUpWindow ? <MapPopUp className="popup" toggle={togglePop} location={selectedMarker}></MapPopUp> : null}
       </Map>
-      {popUpWindow ? <MapPopUp className="popup" toggle={togglePop} location={selectedMarker}></MapPopUp> : null}
     </div>
   );
 };

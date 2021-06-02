@@ -1,6 +1,6 @@
 .popup-container {
   position: relative;
-  top: -31rem;
+  top: 1rem;
   left: 1rem;
   display: flex;
 
@@ -55,9 +55,16 @@
   height:200px; 
   object-fit:cover;
   position: relative;
+  border: 1px solid #3717a04b;
+  border-radius: 0.6rem;
 
   /* left: 18rem; */
   /* top: -11rem; */
+}
+
+.location-link {
+  color: #3717A0;
+  text-decoration: none;
 }
 
 @media (max-width:430px) {
