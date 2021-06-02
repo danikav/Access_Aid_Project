@@ -1,15 +1,39 @@
 import './ReviewForm.css';
+import {useState} from 'react';
 const ReviewForm = () => {
+
+    const [author, setAuthor] = useState("");
+    const [text, setText] = useState(""); 
+
+    const handleAuthorChange = (evt) => {		
+        setAuthor(evt.target.value);
+      }
+    
+      const handleTextChange = (evt) => {		
+        setText(evt.target.value);
+      }
+
+      const handleFormSubmit= (evt) => {
+        evt.preventDefault();
+        const trimmedAuthor = author.trim();
+        const trimmedText = text.trim();
+        if (!trimmedText || !trimmedAuthor) {
+          return
+        }
+      
+        setAuthor("");
+        setText("");    
+      }
 
     return(
         <>
-        <form method="post">
+        <form method="post" onSubmit={handleFormSubmit}>
         <h4>Leave Review</h4>
 
         <div>
           Your name
           <br />
-          <input type="text" id="name" name="name" required />
+          <input type="text" id="name" name="name" placeholder="Name" value={author} onChange={handleAuthorChange} required />
         </div>
 
         <div>
@@ -90,7 +114,7 @@ const ReviewForm = () => {
         <div>
           Review
           <br />
-          <textarea id="review-text" name="review-text" rows="9" required></textarea>
+          <textarea id="review-text" name="review-text" rows="9" value={text} onChange={handleTextChange} required></textarea>
         </div>
 
         <div>
