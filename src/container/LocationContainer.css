@@ -11,6 +11,10 @@
   border-radius: 0.75rem;
 }
 
+.location-info h2 {
+  font-size: 28px;
+}
+
 .location-review-categories {
   display: flex;
   justify-content: space-around;
