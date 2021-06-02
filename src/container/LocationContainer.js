@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ReviewForm from '../components/ReviewForm'
+import ReviewsList from '../components/ReviewsList'
 
 import './LocationContainer.css';
 
@@ -17,7 +18,6 @@ function LocationContainer() {
     const updatedReviews = [...reviews, submittedReview];
     setReviews(updatedReviews);
   }
- 
 
   useEffect(() => {
     fetch(url)
@@ -27,6 +27,7 @@ function LocationContainer() {
 
   useEffect(() => {
     if (location && averages) {
+      setReviews(location.ratings);
       setLocationLoaded(true);
     }
   }, [location, averages]);
@@ -69,6 +70,9 @@ function LocationContainer() {
           </ul>
           {/* <p>{reviews[0]}</p> */}
         </div>
+      </div>
+      <div className="reviews-scroll-box">
+        <ReviewsList reviews={reviews} />
       </div>
       <ReviewForm onFormSubmit={(review) => addReview(review)}/>
       
