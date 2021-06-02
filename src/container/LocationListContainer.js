@@ -38,8 +38,8 @@ const LocationList = ({ locations, locationsLoaded }) => {
 
 
     return (
-      <Link to={url}>
-        <LocationListItem location={item} key={item.id}></LocationListItem>
+      <Link to={url} key={item.id}>
+        <LocationListItem location={item} ></LocationListItem>
       </Link>
     );
   });

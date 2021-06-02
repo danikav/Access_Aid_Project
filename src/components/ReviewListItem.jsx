@@ -1,10 +1,17 @@
+import Rating from 'react-rating'
+
 const ReviewListItem = ({name, comment, totalScore, staffSupport, mobilityAccess, lowNoiseScore, highLightScore, adequateSpaceScore}) => {
+
   return(
     <>
     <h4>{name}</h4>
-    <h5>{totalScore}/5</h5>
+    <Rating emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={totalScore} fractions={2} readonly />
     <p>{comment}</p>
-    <div>Staff Support: {staffSupport}/5 || Mobility Access: {mobilityAccess}/5 || Low Noise Score: {lowNoiseScore}/5 || High Light Score: {highLightScore} || Adequate Space Score: {adequateSpaceScore}/5</div>
+    <div>Staff Support: <Rating emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={staffSupport} fractions={2} readonly /> 
+    Mobility Access: <Rating emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={mobilityAccess} fractions={2} readonly /> 
+    Low Noise Score: <Rating emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={lowNoiseScore} fractions={2} readonly /> 
+    High Light Score: <Rating emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={highLightScore} fractions={2} readonly /> 
+    Adequate Space Score: <Rating emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={adequateSpaceScore} fractions={2} readonly /></div>
     </>
   )
 }
