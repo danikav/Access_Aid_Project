@@ -32,7 +32,7 @@ public class DataLoader implements ApplicationRunner{
 
     public void run(ApplicationArguments args) throws IOException {
 
-        URL url1 = new URL("https://st.depositphotos.com/2777531/4560/v/950/depositphotos_4565647-stock-illustration-coffee-booth.jpg");
+        URL url1 = new URL("https://c8.alamy.com/comp/HH64BP/oysters-clams-and-coffee-for-sale-from-a-stall-in-new-york-1890-HH64BP.jpg");
         Location location1 = new Location("The Coffee Stand", "Hut, Shack, Pop-up, Outdoor, Booth", url1, 55.951984, -3.197184, "A pop-up coffee shop located on Princes Street", false);
         locationRepository.save(location1);
 
