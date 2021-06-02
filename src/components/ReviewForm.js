@@ -1,3 +1,4 @@
+import './ReviewForm.css';
 const ReviewForm = () => {
 
     return(
@@ -93,7 +94,7 @@ const ReviewForm = () => {
         </div>
 
         <div>
-          <input name="skip_Submit" value="Submit" type="submit" />
+          <input id="submit" name="skip_Submit" value="Submit" type="submit" />
         </div>
       </form>
         </>
