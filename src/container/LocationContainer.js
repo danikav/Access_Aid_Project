@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import Rating from 'react-rating';
 import { useParams } from 'react-router-dom';
-import ReviewForm from '../components/ReviewForm'
-import ReviewsList from '../components/ReviewsList'
+import ReviewForm from '../components/ReviewForm';
+import ReviewsList from '../components/ReviewsList';
 
 import './LocationContainer.css';
 
@@ -18,7 +18,7 @@ function LocationContainer() {
     submittedReview.id = Date.now();
     const updatedReviews = [...reviews, submittedReview];
     setReviews(updatedReviews);
-  }
+  };
 
   useEffect(() => {
     fetch(url)
@@ -43,7 +43,7 @@ function LocationContainer() {
           return [metric, sum];
         })
         .reduce((acc, [metric, sum]) => {
-          return { ...acc, [metric]: Math.round((sum / location.ratings.length) * 10) /10 };
+          return { ...acc, [metric]: Math.round((sum / location.ratings.length) * 10) / 10 };
         }, {});
 
       setAverages(averages);
@@ -59,24 +59,65 @@ function LocationContainer() {
       <div className="location-container">
         <img className="location-container-image" src={location.picture_source} alt="location"></img>
         <div className="location-info">
-          <h2>{location.name}</h2>
-          <p>Rating: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.total_score} fractions={2} readonly /></p>
+          <h2>
+            {location.name} <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.total_score} fractions={2} readonly />
+          </h2>
+          {/* <p>Rating: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.total_score} fractions={2} readonly /></p> */}
           <p>{location.description}</p>
-          <ul>
+          {/* <ul>
             <li>Staff Support: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.staff_support} fractions={2} readonly /></li>            
             <li>Mobility Access: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.mobility_access} fractions={2} readonly /></li>
             <li>Noise Level: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.low_noise_score} fractions={2} readonly /></li>
             <li>Light Level: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.high_light_score} fractions={2} readonly /></li>
             <li>Adequate Space: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.adequate_space} fractions={2} readonly /></li>
-          </ul>
+          </ul> */}
+          <h4>Review Categories:</h4>
+          <div className="location-review-categories">
+            <div>
+              <div>
+                Staff Support
+                <div>
+                  <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.staff_support} fractions={2} readonly />
+                </div>
+              </div>
+              <div>
+                High Light
+                <div>
+                  <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.high_light_score} fractions={2} readonly />
+                </div>
+              </div>
+              <div>
+                Low Noise
+                <div>
+                  <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.low_noise_score} fractions={2} readonly />
+                </div>
+              </div>
+            </div>
+            <div>
+              <div>
+                Mobility Access
+                <div>
+                  <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.mobility_access} fractions={2} readonly />
+                </div>
+              </div>
+
+              <div>
+                Adequate Space
+                <div>
+                  <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.adequate_space} fractions={2} readonly />
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* <p>{reviews[0]}</p> */}
         </div>
       </div>
+      <h3>User Reviews</h3>
       <div className="reviews-scroll-box">
         <ReviewsList reviews={reviews} />
       </div>
-      <ReviewForm onFormSubmit={(review) => addReview(review)}/>
-      
+      <ReviewForm onFormSubmit={(review) => addReview(review)} />
     </>
   );
 }

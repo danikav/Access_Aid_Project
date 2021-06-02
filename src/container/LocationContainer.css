@@ -10,6 +10,11 @@
   border-radius: 0.75rem;
 }
 
+.location-review-categories{
+  display: flex;
+  justify-content: space-around;
+}
+
 .reviews-scroll-box {
   border: 1px solid #3717a04b;
   border-radius: 0.75rem;
@@ -17,4 +22,5 @@
   width: 100%;
   height: 50vh;
   overflow: auto;
+  margin: 1rem 0 0 0;
 }
