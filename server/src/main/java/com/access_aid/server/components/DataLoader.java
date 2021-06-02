@@ -36,7 +36,7 @@ public class DataLoader implements ApplicationRunner{
         Location location1 = new Location("The Coffee Stand", "Hut, Shack, Pop-up, Outdoor, Booth", url1, 55.951984, -3.197184, "A pop-up coffee shop located on Princes Street", false);
         locationRepository.save(location1);
 
-        URL url2 = new URL("https://i.pinimg.com/originals/b2/7a/e9/b27ae9ff3285318f2328e90e3b124cd.jpg");
+        URL url2 = new URL("https://i.pinimg.com/originals/66/6b/26/666b26700091a332a1dcfd6bf9ac9eaa.jpg");
         Location location2 = new Location("Cafe Cockburn", "Local, Cafe, Bistro, Gastro, Family-Owned", url2, 55.95598, -3.190279, "A sit in coffee shop found on Cockburn street", true);
         locationRepository.save(location2);
 
@@ -48,7 +48,7 @@ public class DataLoader implements ApplicationRunner{
         Location location4 = new Location("Topped Off", "Local, Cafe, Bistro, Gastro, Family-Owned", url4, 55.932928, -3.137025, "A more down to Earth cafe located in Craigmillar", true);
         locationRepository.save(location4);
 
-        URL url5 = new URL("https://i.pinimg.com/736x/21/5/c7/215c75456c3a44515c19d16d484f266.jpg");
+        URL url5 = new URL("https://i.pinimg.com/originals/a7/92/a9/a792a906b2ab202d90b1469408c9a120.jpg");
         Location location5 = new Location("Wired Puppy", "Alternative, Cafe, Local, Different, 420", url5, 55.98033, -3.219655, "A coffee shop in Granton for those with unusual tastes", true);
         locationRepository.save(location5);
 
