@@ -53,11 +53,11 @@ public class DataLoader implements ApplicationRunner{
         locationRepository.save(location5);
 
         URL url6 = new URL("https://pm1.narvii.com/6633/9d3e0a91eb9eabdf4449da577196b48f9e95c967_hq.jpg");
-        Location location6 = new Location("Coffee N'Stuff", "Local, Cafe, Bistro, Gastro, Family-Owned", url6, 55.922277, -3.255717, "A Coffee shop come-corner newsagents in Longstone", true);
+        Location location6 = new Location("Coffee N'Stuff", "Local, Cafe, Quaint, Gastro, Family-Owned", url6, 55.922277, -3.255717, "A Coffee shop come-corner newsagents in Longstone", true);
         locationRepository.save(location6);
 
         URL url7 = new URL("http://3.bp.blogspot.com/-PFh19ochNQA/U0bnQtGpr5I/AAAAAAAABqE/YESVSSIhWLQ/w1200-h630-p-k-no-nu/COFFEESHOP_sketchtime.jpg");
-        Location location7 = new Location("Cafe & Cake", "Local, Cafe, Bistro, Gastro, Family-Owned", url7, 55.928817, -3.208364, "The best coffee in Morningside and delicious cakes, you deserve the best", true);
+        Location location7 = new Location("Cafe & Cake", "Local, Cafe, Bistro, Cozy, Family-Owned", url7, 55.928817, -3.208364, "The best coffee in Morningside and delicious cakes, you deserve the best", true);
         locationRepository.save(location7);
 
         URL url8 = new URL("http://3.bp.blogspot.com/-26lHOAUoxJ8/VASuXyWwkdI/AAAAAAAAFps/8s3BwZrALdQ/s1600/panama-hotel-tea-and-coffee-house-03162014.gif");
@@ -95,6 +95,30 @@ public class DataLoader implements ApplicationRunner{
         URL url16 = new URL("http://1.bp.blogspot.com/-mzebBcMZpDU/V2FCznUj0oI/AAAAAAAAH1g/3fujjOUQXa8NjZpEczaWqykLXB03XguEgCK4B/s1600/Starbucks-vivo%2Bsketch.jpg");
         Location location16 = new Location("CostaBucks, Inverleith", "Chain, Branded, Predictable, Shite, Boring", url16, 55.966497, -3.213929, "An upmarket coffee shop found in Inverleith", true);
         locationRepository.save(location16);
+
+        URL url17 = new URL("https://image.shutterstock.com/image-vector/philippines-beautiful-tropical-island-resort-260nw-1293386980.jpg");
+        Location location17 = new Location("Cafe Tropical", "Cafe, Views, Outdoor, Gastro, 420", url17, 55.972646, -3.296068, "Seaside Cafe found in Cramond, overlooking the Island", true);
+        locationRepository.save(location17);
+
+        URL url18 = new URL("https://edinburghsketcher.com/wp-content/uploads/sites/43/PortobelloBeach_noprint.jpg");
+        Location location18 = new Location("Tea by the Sea", "Local, Cafe, Quaint, Cozy, Bistro", url18, 55.966497, -3.213929, "Coffee on the coast, overlooking Portobello Beach", true);
+        locationRepository.save(location18);
+
+        URL url19 = new URL("https://live.staticflickr.com/5066/5653783689_4a37f39da7_z.jpg");
+        Location location19 = new Location("Perché Sei Qui?", "Local, Restaurant, Italian, Expensive, Family-Owned", url19, 55.965001, -3.252663, "A Charming Italian Restaurant in scenic Drylaw", true);
+        locationRepository.save(location19);
+
+        URL url20 = new URL("https://plannersweb.com/wp-content/uploads/2013/11/Confluence-Riverfront-Park-sketch.jpg");
+        Location location20 = new Location("The Coffee Pod", "Hut, Shack, Pop-up, Outdoor, Booth", url20, 55.922321, -3.15249, "A pop up coffee stand at the Inch Park", false);
+        locationRepository.save(location20);
+
+        URL url21 = new URL("https://4.bp.blogspot.com/-HBKOu6zJj9g/UeWTUYj9zbI/AAAAAAAADKE/LdupK0RdwTE/s1600/Maro%CC%81ti-Atlantisz_1.jpg");
+        Location location21 = new Location("CostaBucks, Atlantis", "Chain, Branded, Underwater, Wet, Sharks", url21, 54.162434, -33.178498, "CostaBucks have even set up in the kingdom of Atlantis.", false);
+        locationRepository.save(location21);
+
+        URL url22 = new URL("https://images.squarespace-cdn.com/content/55c7cdbfe4b0ff8d21146290/1586233921061-IZDP99V41E2HDGWKAAL5/image-asset.jpeg?content-type=image%2Fjpeg");
+        Location location22 = new Location("The Big Chill", "Cold, Icy, Penguins, Frost, Chilly", url22, -81.881419, -42.714023, "The Worlds Most Senseless Cafe", true);
+        locationRepository.save(location22);
 
         /////////////////////////////////////////////////////
 
@@ -141,104 +165,116 @@ public class DataLoader implements ApplicationRunner{
         /////////////////////////////////////////////////////
 
         LocalDate date1 = LocalDate.of(2021, 05, 01);
-//        Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse("01/5/2021");
         Rating rating1 = new Rating(date1, 05, 2, 4, 4, 2, "So glad I discovered this place", location1, user1);
         ratingRepository.save(rating1);
 
         LocalDate date2 = LocalDate.of(2021, 05, 04);
-//        Date date2 = new SimpleDateFormat("dd/MM/yyyy").parse("04/5/2021");
         Rating rating2 = new Rating(date2, 2, 4, 3, 2, 5, "Really enjoyed myself", location2, user2);
         ratingRepository.save(rating2);
 
         LocalDate date3 = LocalDate.of(2021, 05, 5);
-//        Date date3 = new SimpleDateFormat("dd/MM/yyyy").parse("5/5/2021");
         Rating rating3 = new Rating(date3, 5, 1, 3, 3, 2, "The coffee wasn't great", location3, user3);
         ratingRepository.save(rating3);
 
         LocalDate date4 = LocalDate.of(2021, 05, 07);
-//        Date date4 = new SimpleDateFormat("dd/MM/yyyy").parse("07/5/2021");
         Rating rating4 = new Rating(date4, 4, 1, 2, 3, 1, "Staff were so rude", location4, user4);
         ratingRepository.save(rating4);
 
         LocalDate date5 = LocalDate.of(2021, 05, 10);
-//        Date date5 = new SimpleDateFormat("dd/MM/yyyy").parse("10/5/2021");
         Rating rating5 = new Rating(date5, 1, 5, 5, 4, 3, "I really enjoyed the peace and quiet", location5, user5);
         ratingRepository.save(rating5);
 
         LocalDate date6 = LocalDate.of(2021, 05, 11);
-//        Date date6 = new SimpleDateFormat("dd/MM/yyyy").parse("11/5/2021");
         Rating rating6 = new Rating(date6, 5, 4, 1, 2, 2, "The building was freezing", location6, user6);
         ratingRepository.save(rating6);
 
         LocalDate date7 = LocalDate.of(2021, 05, 13);
-//        Date date7 = new SimpleDateFormat("dd/MM/yyyy").parse("13/5/2021");
         Rating rating7 = new Rating(date7, 5, 3, 4, 3, 1, "Food was cold", location7, user7);
         ratingRepository.save(rating7);
 
         LocalDate date8 = LocalDate.of(2021, 05, 13);
-//        Date date8 = new SimpleDateFormat("dd/MM/yyyy").parse("13/5/2021");
         Rating rating8 = new Rating(date8, 5, 4, 5, 4, 4, "I will be back", location8, user8);
         ratingRepository.save(rating8);
 
         LocalDate date9 = LocalDate.of(2021, 05, 29);
-//        Date date9 = new SimpleDateFormat("dd/MM/yyyy").parse("29/5/2021");
         Rating rating9 = new Rating(date9, 5, 4, 4, 4, 3, "Really loved it here", location9, user1);
         ratingRepository.save(rating9);
 
         LocalDate date10 = LocalDate.of(2021, 05, 18);
-//        Date date10 = new SimpleDateFormat("dd/MM/yyyy").parse("18/5/2021");
         Rating rating10 = new Rating(date10, 2, 1, 2, 2, 4, "Far too loud!", location10, user2);
         ratingRepository.save(rating10);
 
         LocalDate date11 = LocalDate.of(2021, 05, 07);
-//        Date date11 = new SimpleDateFormat("dd/MM/yyyy").parse("07/5/2021");
         Rating rating11 = new Rating(date11, 1, 1, 3, 1, 2, "Hated it", location11, user3);
         ratingRepository.save(rating11);
 
         LocalDate date12 = LocalDate.of(2021, 05, 30);
-//        Date date12 = new SimpleDateFormat("dd/MM/yyyy").parse("30/5/2021");
         Rating rating12 = new Rating(date12, 4, 5, 5, 3, 4, "I wish I had known about this place sooner", location12, user4);
         ratingRepository.save(rating12);
 
         LocalDate date13 = LocalDate.of(2021, 05, 24);
-//        Date date13 = new SimpleDateFormat("dd/MM/yyyy").parse("24/5/2021");
         Rating rating13 = new Rating(date13, 3, 4, 1, 1, 2, "Dark, full of interesting weirdos though", location13, user5);
         ratingRepository.save(rating13);
 
         LocalDate date14 = LocalDate.of(2021, 05, 19);
-//        Date date14 = new SimpleDateFormat("dd/MM/yyyy").parse("19/5/2021");
         Rating rating14 = new Rating(date14, 1, 3, 1, 1, 4, "Very dark, confusing to get around", location14, user6);
         ratingRepository.save(rating14);
 
         LocalDate date15 = LocalDate.of(2021, 05, 5);
-//        Date date15 = new SimpleDateFormat("dd/MM/yyyy").parse("5/5/2021");
         Rating rating15 = new Rating(date15, 5, 3, 4, 3, 5, "Thought the staff were really helpful", location15, user7);
         ratingRepository.save(rating15);
 
         LocalDate date16 = LocalDate.of(2021, 05, 17);
-//        Date date16 = new SimpleDateFormat("dd/MM/yyyy").parse("17/5/2021");
         Rating rating16 = new Rating(date16, 2, 2, 2, 2, 2, "Should have stayed at home", location16, user8);
         ratingRepository.save(rating16);
 
         LocalDate date17 = LocalDate.of(2021, 05, 18);
-//        Date date17 = new SimpleDateFormat("dd/MM/yyyy").parse("18/5/2021");
         Rating rating17 = new Rating(date17, 5, 5, 5, 5, 5, "I saw Harrison in there, oh my god *swoon*", location13, user6);
         ratingRepository.save(rating17);
 
         LocalDate date18 = LocalDate.of(2021, 05, 17);
-//        Date date18 = new SimpleDateFormat("dd/MM/yyyy").parse("17/5/2021");
         Rating rating18 = new Rating(date18, 4, 3, 4, 4, 5, "One of my favourites already", location5, user7);
         ratingRepository.save(rating18);
 
         LocalDate date19 = LocalDate.of(2021, 05, 22);
-//        Date date19 = new SimpleDateFormat("dd/MM/yyyy").parse("22/5/2021");
         Rating rating19 = new Rating(date19, 3, 2, 2, 2, 3, "Meh", location16, user2);
         ratingRepository.save(rating19);
 
         LocalDate date20 = LocalDate.of(2021, 05, 26);
-//        Date date20 = new SimpleDateFormat("dd/MM/yyyy").parse("26/5/2021");
         Rating rating20 = new Rating(date20, 1, 1, 1, 1, 1, "I saw Harrison in there, ew", location13, user2);
         ratingRepository.save(rating20);
+
+        LocalDate date21 = LocalDate.of(2021, 05, 17);
+        Rating rating21 = new Rating(date21, 5, 1, 4, 3, 3, "Such beautiful views, very loud though", location17, user3);
+        ratingRepository.save(rating21);
+
+        LocalDate date22 = LocalDate.of(2021, 05, 06);
+        Rating rating22 = new Rating(date22, 5, 1, 2, 2, 5, "Sadly the beach was very busy, though the coffee was good", location18, user2);
+        ratingRepository.save(rating22);
+
+        LocalDate date23 = LocalDate.of(2021, 05, 22);
+        Rating rating23 = new Rating(date23, 3, 2, 2, 1, 1, "Assolutamente terribile!", location19, user8);
+        ratingRepository.save(rating23);
+
+        LocalDate date24 = LocalDate.of(2021, 05, 17);
+        Rating rating24 = new Rating(date24, 4, 2, 4, 4, 5, "Staff were very understanding, really liked them", location20, user7);
+        ratingRepository.save(rating24);
+
+        LocalDate date25 = LocalDate.of(2021, 05, 01);
+        Rating rating25 = new Rating(date25, 1, 5, 1, 1, 1, "Honestly not sure what I was expecting, glup glup", location21, user3);
+        ratingRepository.save(rating25);
+
+        LocalDate date26 = LocalDate.of(2021, 05, 02);
+        Rating rating26 = new Rating(date26, 1, 1, 1, 1, 1, "It was f****ing freezing", location22, user6);
+        ratingRepository.save(rating26);
+
+        LocalDate date27 = LocalDate.of(2021, 05, 26);
+        Rating rating27 = new Rating(date27, 5, 2, 3, 4, 4, "Really made me appreciate Inch park", location20, user5);
+        ratingRepository.save(rating27);
+
+        LocalDate date28 = LocalDate.of(2021, 05, 26);
+        Rating rating28 = new Rating(date28, 3, 1, 3, 3, 3, "VERY loud, too nosy for me to stay long", location18, user8);
+        ratingRepository.save(rating28);
         
     }
 }
