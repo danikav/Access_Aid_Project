@@ -15,9 +15,8 @@ const MapPopUp = ({ toggle, location }) => {
     <>
       <div className="popup-container">
         <div className="location-text">
-          <img src={location.picture_source} alt={location.name} className="location-image-cover"></img>
-
           <Link to={url} className="location-link">
+            <img src={location.picture_source} alt={location.name} className="location-image-cover"></img>
             <h3>{location.name}</h3>
           </Link>
           <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={totalScore} fractions={2} readonly />

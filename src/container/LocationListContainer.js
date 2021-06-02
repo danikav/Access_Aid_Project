@@ -8,19 +8,28 @@ const LocationList = ({ locations, locationsLoaded }) => {
   const [filteredLocations, setFilteredLocations] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [refinementTerm, setRefinementTerm] = useState([]);
- 
 
   const filterLocations = (searchTerm) => {
     setFilteredLocations(
-      locations.filter((location) => {
-        return location.type.toLowerCase().includes(searchTerm.trim().toLowerCase());
-      }).filter((location) => {
-        return !refinementTerm.some(refinement => { 
-          return (location.ratings.reduce((sumRating, rating) => {
-            return sumRating + rating[refinement]
-          }, 0) / location.ratings.length) < 3
+      locations
+        .filter((location) => {
+          let foundLocation = location.type.toLowerCase().includes(searchTerm.trim().toLowerCase());
+          if (!foundLocation) {
+            foundLocation = location.name.toLowerCase().includes(searchTerm.trim().toLowerCase());
+          }
+          return foundLocation;
         })
-      })
+        .filter((location) => {
+          return !refinementTerm.some((refinement) => {
+            return (
+              location.ratings.reduce((sumRating, rating) => {
+                return sumRating + rating[refinement];
+              }, 0) /
+                location.ratings.length <
+              3
+            );
+          });
+        })
     );
   };
 
@@ -29,17 +38,16 @@ const LocationList = ({ locations, locationsLoaded }) => {
   }, [searchTerm, refinementTerm, locations]);
 
   const handleSearchSubmit = (searchTerm, refinementValues) => {
-    setSearchTerm(searchTerm)
-    setRefinementTerm(refinementValues)
-  }
+    setSearchTerm(searchTerm);
+    setRefinementTerm(refinementValues);
+  };
 
   const locationListItemNode = filteredLocations.map((item) => {
     const url = '/location/' + item.id;
 
-
     return (
       <Link to={url} key={item.id}>
-        <LocationListItem location={item} ></LocationListItem>
+        <LocationListItem location={item}></LocationListItem>
       </Link>
     );
   });

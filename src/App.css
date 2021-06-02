@@ -6,7 +6,7 @@
 .page-content {
   position: relative;
   top: 4rem;
-  margin: auto;
+  margin: auto auto 5rem auto;
   max-width: 960px;
 }
 
