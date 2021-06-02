@@ -1,5 +1,7 @@
 import './ReviewForm.css';
 import {useState} from 'react';
+import Rating from 'react-rating';
+
 const ReviewForm = ({onFormSubmit}) => {
 
     const [author, setAuthor] = useState("");
@@ -41,80 +43,165 @@ const ReviewForm = ({onFormSubmit}) => {
           <input type="text" id="name" name="name" placeholder="Name" value={author} onChange={handleAuthorChange} required />
         </div>
 
-        <div>
+        <div class="ratings" id="rating-light" name="rating-light">
           Light level
-          <br />
-          <select id="rating-light" name="rating-light" required>
-            <option selected disabled>
-              Make a selection
-            </option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
+          <Rating start="0" stop="5" step="1"/>
+          {/* <br />
+          <label>One
+         <input type="radio" name="radio" />
+         <span class="checkmark"></span>
+         </label>
+
+        <label>Two
+        <input type="radio" name="radio" />
+        <span class="checkmark"></span>
+        </label>
+
+        <label>Three
+        <input type="radio" name="radio" />
+        <span class="checkmark"></span>
+        </label>
+
+        <label>Four
+        <input type="radio" name="radio" />
+        <span class="checkmark"></span>
+        </label>
+
+        <br />
+          <label>Five
+         <input type="radio" name="radio" />
+         <span class="checkmark"></span>
+         </label> */}
+
         </div>
 
-        <div>
+         <div class="ratings" id="rating-noise" name="rating-noise">
           Noise level
-          <br />
-          <select id="rating-noise" name="rating-noise" required>
-            <option selected disabled>
-              Make a selection
-            </option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
+          <Rating start="0" stop="5" step="1"/>
+          {/* <br />
+          <label>One
+         <input type="radio" name="radio" />
+         <span class="checkmark"></span>
+         </label>
+
+        <label>Two
+        <input type="radio" name="radio" />
+        <span class="checkmark"></span>
+        </label>
+
+        <label>Three
+        <input type="radio" name="radio" />
+        <span class="checkmark"></span>
+        </label>
+
+        <label>Four
+        <input type="radio" name="radio" />
+        <span class="checkmark"></span>
+        </label>
+
+        <br />
+          <label>Five
+         <input type="radio" name="radio" />
+         <span class="checkmark"></span>
+         </label>
+*/}
         </div>
 
-        <div>
-          Space availability
-          <br />
-          <select id="rating-space" name="rating-space" required>
-            <option selected disabled>
-              Make a selection
-            </option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
+        <div class="ratings" id="rating-space" name="rating-space" >
+          Space Level
+          <Rating start="0" stop="5" step="1"/>
+          {/* <br />
+          <label>One
+         <input type="radio" name="radio" />
+         <span class="checkmark"></span>
+         </label>
 
-        <div>
-          Mobility access
-          <br />
-          <select id="rating-access" name="rating-access" required>
-            <option selected disabled>
-              Make a selection
-            </option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
+        <label>Two
+        <input type="radio" name="radio" />
+        <span class="checkmark"></span>
+        </label>
 
-        <div>
-          Staff support
-          <br />
-          <select id="rating-staff" name="rating-staff" required>
-            <option selected disabled>
-              Make a selection
-            </option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
+        <label>Three
+        <input type="radio" name="radio" />
+        <span class="checkmark"></span>
+        </label>
+
+        <label>Four
+        <input type="radio" name="radio" />
+        <span class="checkmark"></span>
+        </label>
+
+        <br />
+          <label>Five
+         <input type="radio" name="radio" />
+         <span class="checkmark"></span>
+         </label>
+*/}
+        </div> 
+
+        <div class="ratings" id="rating-access" name="rating-access" >
+          Mobility Access
+          <Rating start="0" stop="5" step="1"/>
+          {/* <br />
+          <label>One
+         <input type="radio" name="radio" />
+         <span class="checkmark"></span>
+         </label>
+
+        <label>Two
+        <input type="radio" name="radio" />
+        <span class="checkmark"></span>
+        </label>
+
+        <label>Three
+        <input type="radio" name="radio" />
+        <span class="checkmark"></span>
+        </label>
+
+        <label>Four
+        <input type="radio" name="radio" />
+        <span class="checkmark"></span>
+        </label>
+
+        <br />
+          <label>Five
+         <input type="radio" name="radio" />
+         <span class="checkmark"></span>
+         </label>
+*/}
+        </div> 
+
+        <div class="ratings" id="rating-staff" name="rating-staff" >
+          Staff Support
+          <Rating start="0" stop="5" step="1"/>
+          {/* <br />
+          <label>One
+         <input type="radio" name="radio" />
+         <span class="checkmark"></span>
+         </label>
+
+        <label>Two
+        <input type="radio" name="radio" />
+        <span class="checkmark"></span>
+        </label>
+
+        <label>Three
+        <input type="radio" name="radio" />
+        <span class="checkmark"></span>
+        </label>
+
+        <label>Four
+        <input type="radio" name="radio" />
+        <span class="checkmark"></span>
+        </label>
+
+        <br />
+          <label>Five
+         <input type="radio" name="radio" />
+         <span class="checkmark"></span>
+         </label>*/}
+
+     </div> 
 
         <div>
           Review
