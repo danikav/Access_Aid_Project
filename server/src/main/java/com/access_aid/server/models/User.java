@@ -102,4 +102,3 @@ public class User {
         this.ratings = ratings;
     }
 }
-
