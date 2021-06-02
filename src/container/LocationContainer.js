@@ -32,7 +32,7 @@ function LocationContainer() {
           return [metric, sum];
         })
         .reduce((acc, [metric, sum]) => {
-          return { ...acc, [metric]: sum / location.ratings.length };
+          return { ...acc, [metric]: Math.round((sum / location.ratings.length) * 10) /10 };
         }, {});
 
       setAverages(averages);
