@@ -106,31 +106,31 @@ const ReviewForm = ({onFormSubmit, selectedLocation, users}) => {
 
         <div class="ratings" id="rating-light" name="rating-light">
           Light level <br />
-          <Rating initialRating={light} onClick={handleLight} stop="5" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
+          <Rating className="rating" initialRating={light} onClick={handleLight} stop="5" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
           
         </div>
 
          <div class="ratings" id="rating-noise" name="rating-noise">
           Noise level <br />
-          <Rating initialRating={noise} onClick={handleNoise} stop="5" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
+          <Rating className="rating" initialRating={noise} onClick={handleNoise} stop="5" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
           
         </div>
 
         <div class="ratings" id="rating-space" name="rating-space" >
           Space Level <br />
-          <Rating initialRating={space} onClick={handleSpace} stop="5" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
+          <Rating className="rating" initialRating={space} onClick={handleSpace} stop="5" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
           
         </div> 
 
         <div class="ratings" id="rating-access" name="rating-access" >
           Mobility Access <br />
-          <Rating initialRating={mobility} onClick={handleMobility} stop="5" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
+          <Rating className="rating" initialRating={mobility} onClick={handleMobility} stop="5" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
           
         </div> 
 
         <div class="ratings" id="rating-staff" name="rating-staff" >
           Staff Support <br />
-          <Rating initialRating={support} onClick={handleSupport} stop="5" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
+          <Rating className="rating" initialRating={support} onClick={handleSupport} stop="5" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
 
         </div> 
 
