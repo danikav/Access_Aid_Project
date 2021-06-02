@@ -1,4 +1,4 @@
-# Access Aid is an app to help individuals with disabilities to find locations that can cater to their needs
+# Access Aid is an app to help individuals with disabilities to find businesses that can cater to their needs
 
 -----------------------------------------------------------------------------
 
