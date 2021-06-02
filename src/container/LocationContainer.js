@@ -3,6 +3,7 @@ import Rating from 'react-rating';
 import { useParams } from 'react-router-dom';
 import ReviewForm from '../components/ReviewForm';
 import ReviewsList from '../components/ReviewsList';
+import { Map, Marker } from 'pigeon-maps';
 
 import './LocationContainer.css';
 
@@ -13,6 +14,7 @@ function LocationContainer() {
   const [reviews, setReviews] = useState([]);
   const [locationLoaded, setLocationLoaded] = useState(false);
   const [averages, setAverages] = useState(null);
+  const [coordinates, setCoordinates] = useState('');
 
   const addReview = (submittedReview) => {
     submittedReview.id = Date.now();
@@ -35,6 +37,8 @@ function LocationContainer() {
 
   useEffect(() => {
     if (location) {
+      setCoordinates([location.longitude, location.latitude])
+
       const metrics = ['high_light_score', 'low_noise_score', 'adequate_space', 'mobility_access', 'staff_support', 'total_score'];
 
       const averages = metrics
@@ -62,15 +66,7 @@ function LocationContainer() {
           <h2>
             {location.name} <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.total_score} fractions={2} readonly />
           </h2>
-          {/* <p>Rating: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.total_score} fractions={2} readonly /></p> */}
           <p>{location.description}</p>
-          {/* <ul>
-            <li>Staff Support: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.staff_support} fractions={2} readonly /></li>            
-            <li>Mobility Access: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.mobility_access} fractions={2} readonly /></li>
-            <li>Noise Level: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.low_noise_score} fractions={2} readonly /></li>
-            <li>Light Level: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.high_light_score} fractions={2} readonly /></li>
-            <li>Adequate Space: <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={averages.adequate_space} fractions={2} readonly /></li>
-          </ul> */}
           <h4>Review Categories:</h4>
           <div className="location-review-categories">
             <div>
@@ -113,6 +109,12 @@ function LocationContainer() {
           {/* <p>{reviews[0]}</p> */}
         </div>
       </div>
+      <div className="location-map-container">
+        <Map className="map" defaultCenter={coordinates} defaultZoom={15}>
+          <Marker width={45} anchor={coordinates} key={location.id} color="#3717A0"></Marker>
+        </Map>
+      </div>
+
       <h3>User Reviews:</h3>
       <div className="reviews-scroll-box">
         <ReviewsList reviews={reviews} />
