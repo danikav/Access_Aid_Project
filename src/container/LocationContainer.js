@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import ReviewForm from '../components/ReviewForm'
 
 function LocationContainer() {
   const { id } = useParams();
@@ -29,8 +30,8 @@ function LocationContainer() {
           </ul>
         </div>
       </div>
-
-      <form method="post">
+      <ReviewForm />
+      {/* <form method="post">
         <h4>Leave Review</h4>
 
         <div>
@@ -123,7 +124,7 @@ function LocationContainer() {
         <div>
           <input name="skip_Submit" value="Submit" type="submit" />
         </div>
-      </form>
+      </form> */}
     </>
   );
 }
