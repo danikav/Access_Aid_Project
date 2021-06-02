@@ -1,11 +1,11 @@
 package com.access_aid.server.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.access_aid.server.models.User;
-import com.access_aid.server.models.Location;
+
 
 import javax.persistence.*;
-import java.util.ArrayList;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name="ratings")
@@ -16,7 +16,7 @@ public class Rating {
     private Long id;
 
     @Column(name = "date")
-    private String date;
+    private LocalDate date;
 
     @Column(name = "high_light_score")
     private int high_light_score;
@@ -49,7 +49,7 @@ public class Rating {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    public Rating(String date, int high_light_score, int low_noise_score, int adequate_space, int mobility_access, int staff_support, String user_reviews, Location location, User user) {
+    public Rating(LocalDate date, int high_light_score, int low_noise_score, int adequate_space, int mobility_access, int staff_support, String user_reviews, Location location, User user) {
         this.date = date;
         this.high_light_score = high_light_score;
         this.low_noise_score = low_noise_score;
@@ -73,11 +73,11 @@ public class Rating {
         this.id = id;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
