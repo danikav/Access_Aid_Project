@@ -5,7 +5,6 @@
   display: flex;
 
   width: 20rem;
-  /* height: 18rem; */
   padding: 1rem;
 
   background-color: rgba(255, 255, 255, 0.6);
@@ -18,8 +17,6 @@
 
 .close-button {
   position: relative;
-  /* left: 28rem; */
-  /* top: -0.5rem; */
   z-index: 10;
 
   cursor:pointer;
@@ -30,20 +27,14 @@
   height: 25px;
   border-width: 5px;
   border-style: solid;
-  border-color: #222222;
+  border-color: #3717a0;
   border-radius: 100%;
   /* x within the circle */
   background: -webkit-linear-gradient(-45deg, transparent 0%, transparent 46%, #b8b8b8 46%, #b8b8b8 56%, transparent 56%, transparent 100%),
     -webkit-linear-gradient(45deg, transparent 0%, transparent 46%, #b8b8b8 46%, #b8b8b8 56%, transparent 56%, transparent 100%);
-  background-color: #222222;
+  background-color: #3717a0;
   transition: all 0.1s ease-in-out;
 }
-
-/* .location-text {
-  display: inline;
-  position: relative;
-  top: -4rem;
-} */
 
 .location-text h1, ul {
   margin: 0;

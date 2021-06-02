@@ -1,4 +1,5 @@
 import ReviewListItem from './ReviewListItem';
+import './Reviews.css';
 
 const ReviewsList = ({ reviews }) => {
   if (!reviews) {
@@ -17,11 +18,12 @@ const ReviewsList = ({ reviews }) => {
         lowNoiseScore={review.low_noise_score}
         highLightScore={review.high_light_score}
         adequateSpaceScore={review.adequate_space}
+        date={review.date}
       />
     );
   });
 
-  return <>{reviewNode}</>;
+  return <div className="reviews-grid">{reviewNode}</div>;
 };
 
 export default ReviewsList;

@@ -20,7 +20,7 @@ const MapPopUp = ({ toggle, location }) => {
           <Link to={url} className="location-link">
             <h3>{location.name}</h3>
           </Link>
-          <Rating emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={totalScore} fractions={2} readonly />
+          <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={totalScore} fractions={2} readonly />
           <p>{location.description}</p>
         </div>
 
