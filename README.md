@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Access Aid is an app to help individuals with disabilities to find locations that can cater to their needs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-----------------------------------------------------------------------------
 
-## Available Scripts
+![alt text](https://i2.wp.com/wheelchairtravel.org/wp-content/uploads/2020/06/popup-feature-1.jpg?fit=760%2C440&ssl=1 "No Limits")
 
-In the project directory, you can run:
+-----------------------------------------------------------------------------
 
-### `npm start`
+### Made using the following (languages and applications):
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  *HTML*
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  *CSS*
 
-### `npm test`
+  *JS*
+  
+  *Java*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  *React*
 
-### `npm run build`
+  *Adobe*
+  
+  *VS Code*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  *Git & Github*
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-----------------------------------------------------------------------------
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## To install the Access Aid locally via the terminal please follow these steps:
 
-### `npm run eject`
+*Note: Please use two terminals, one for server and one for clients*:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### SERVER/BACK-END (TERMINAL ONE)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**To install IntellaJ:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    ~https://www.jetbrains.com/idea/ (free download)
+    
+**Open Server using IntellaJ:**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    ~Open IntellaJ and use it to open server folder in access_aid
 
-## Learn More
+**To run server:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ~Navigate to ServerApplication, select run file
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The apps server should now be running at http://localhost:8080/
 
-### Code Splitting
+-----------------------------------------------------------------------------
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### CLIENT/FRONT-END (TERMINAL TWO)
 
-### Analyzing the Bundle Size
+**To get to the client folder:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Use cd commands to navigate to client folder
 
-### Making a Progressive Web App
+**To install Node Package Manager (npm) on the client side:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    ~npm install
 
-### Advanced Configuration
+**To run the server on the client side:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    ~npm start
 
-### Deployment
+The app will now run locally via your browser at http://localhost:3000/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+----------------------------------------------------------------------------- 
 
-### `npm run build` fails to minify
+## Inspirations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* https://www.euansguide.com/
+
+      * NOTE: For social aspect etc.
+
+* https://www.waze.com/en-GB/
+     
+      * NOTE: For location highlighting etc.
+
+* https://www.dugswelcome.com/dug-app/
+
+      * NOTE: For reviews of businesses and suitability under pre-set conditions
+
+----------------------------------------------------------------------------- 
+
+#### As Nido Qubein said 
+
+> "Your present circumstances don't determine where you can go; they merely determine where you start." 
+
+-----------------------------------------------------------------------------
+
+**Created by:**
+
+*Alex*
+
+*Dani*
+
+*Tim*
+
+----------------------------------------------------------------------------- 
