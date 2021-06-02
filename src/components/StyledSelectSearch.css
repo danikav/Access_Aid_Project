@@ -42,8 +42,9 @@
     height: 36px;
     width: 100%;
     padding: 0 40px 0 16px;
-    background: white;
+    background: #3717A0;
     border: 2px solid #3717A0;
+    color: #fff;
     /* box-shadow: 0 .0625rem .125rem rgba(0, 0, 0, 0.15); */
     border-radius: 8px;
     /* outline: none; */
@@ -55,9 +56,9 @@
     -webkit-appearance: none;
 }
 
-/* .select-search__input::placeholder {
+.select-search__input::placeholder {
     color: white;
-} */
+}
 
 .select-search__input::-webkit-search-decoration,
 .select-search__input::-webkit-search-cancel-button,
@@ -74,7 +75,7 @@
  * Options wrapper
  */
 .select-search__select {
-    background: #fff;
+    background: #3717A0;
     box-shadow: 0 .0625rem .125rem rgba(0, 0, 0, 0.15);
 }
 
@@ -83,13 +84,14 @@
  */
 .select-search__options {
     list-style: none;
+    display: inline;
 }
 
 /**
  * Option row
  */
 .select-search__row:not(:first-child) {
-    border-top: 1px solid #eee;
+    /* border-top: 1px solid #eee; */
 }
 
 /**
@@ -101,11 +103,12 @@
     height: 36px;
     width: 100%;
     padding: 0 16px;
-    background: #fff;
+    background: #3717A0;
+    color: white;
     border: none;
     outline: none;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 14px;
+    /* font-family: 'Noto Sans', sans-serif; */
+    font-size: 16px;
     text-align: left;
     cursor: pointer;
 }
@@ -115,19 +118,22 @@
 }
 
 .select-search__option.is-selected {
-    background: #3717A0;
+    background: #7353db;
+    border-radius: 0;
     color: #fff;
 }
 
 .select-search__option.is-highlighted,
 .select-search__option:not(.is-selected):hover {
-    background: rgba(55, 23, 160, 0.1);
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 0;
 }
 
 .select-search__option.is-highlighted.is-selected,
 .select-search__option.is-selected:hover {
-    background: #3717A0;
+    background: #7353db;
     color: #fff;
+    border-radius: 0;
 }
 
 /**
@@ -191,7 +197,7 @@
 .select-search:not(.select-search--multiple) .select-search__select {
     position: absolute;
     z-index: 2;
-    top: 44px;
+    top: 30px;
     right: 0;
     left: 0;
     border-radius: 0 0 8px 8px;

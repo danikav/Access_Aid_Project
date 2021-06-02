@@ -7,11 +7,11 @@ const SearchBar = ({ handleSubmit }) => {
   const [refinementValue, setRefinementValue] = useState([])
 
   const options = [
-    { name: 'Low noise level', value: 'low_noise_score' },
-    { name: 'High light level', value: 'high_light_score' },
-    { name: 'Adequate space', value: 'adequate_space' },
+    { name: 'Low Noise Level', value: 'low_noise_score' },
+    { name: 'High Light Level', value: 'high_light_score' },
+    { name: 'Adequate Space', value: 'adequate_space' },
     { name: 'Mobility Access', value: 'mobility_access' },
-    { name: 'Staff support', value: 'staff_support' },
+    { name: 'Staff Support', value: 'staff_support' },
   ];
 
   const onSubmit = (event) => {
