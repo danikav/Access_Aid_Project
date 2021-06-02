@@ -1,0 +1,35 @@
+.reviews-grid {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+.review-item {
+  border: 1px solid #3717a04b;
+  border-radius: 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  background-color: #fcfaff;
+
+}
+
+.display-icon {
+  display:inline;
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid #3717a04b;
+  border-radius: 50%;
+  background-color: rgb(240, 197, 104);
+}
+
+.review-title {
+  display: flex;
+}
+
+.review-date {
+  justify-self: end;
+  margin-right: 0;
+  margin-left: auto;
+  font-weight: lighter;
+  /* text-align: right; */
+}
