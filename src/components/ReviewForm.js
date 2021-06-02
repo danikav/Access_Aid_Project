@@ -1,6 +1,6 @@
 import './ReviewForm.css';
 import {useState} from 'react';
-const ReviewForm = () => {
+const ReviewForm = ({onFormSubmit}) => {
 
     const [author, setAuthor] = useState("");
     const [text, setText] = useState(""); 
@@ -20,6 +20,11 @@ const ReviewForm = () => {
         if (!trimmedText || !trimmedAuthor) {
           return
         }
+
+        onFormSubmit({						
+            author: trimmedAuthor,
+            text: trimmedText			
+          });
       
         setAuthor("");
         setText("");    

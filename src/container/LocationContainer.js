@@ -6,6 +6,13 @@ function LocationContainer() {
   const { id } = useParams();
   const url = 'http://localhost:8080/api/locations/' + id;
   const [location, setLocation] = useState({});
+  const [reviews, setReviews] = useState([]);
+
+  const addReview = (submittedReview) => {
+    submittedReview.id = Date.now();
+    const updatedReviews = [...reviews, submittedReview];
+    setReviews(updatedReviews);
+  }
 
   useEffect(() => {
     fetch(url)
@@ -28,9 +35,10 @@ function LocationContainer() {
             <li>Star rating here.</li>
             <li>Star rating here.</li>
           </ul>
+          {/* <p>{reviews[0]}</p> */}
         </div>
       </div>
-      <ReviewForm />
+      <ReviewForm onFormSubmit={(review) => addReview(review)}/>
       
     </>
   );

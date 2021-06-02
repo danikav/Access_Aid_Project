@@ -7,7 +7,8 @@ import SearchBar from '../components/SearchBar';
 const LocationList = ({ locations, locationsLoaded }) => {
   const [filteredLocations, setFilteredLocations] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [refinementTerm, setRefinementTerm] = useState([])
+  const [refinementTerm, setRefinementTerm] = useState([]);
+ 
 
   const filterLocations = (searchTerm) => {
     setFilteredLocations(
@@ -34,6 +35,7 @@ const LocationList = ({ locations, locationsLoaded }) => {
 
   const locationListItemNode = filteredLocations.map((item) => {
     const url = '/location/' + item.id;
+
 
     return (
       <Link to={url}>
