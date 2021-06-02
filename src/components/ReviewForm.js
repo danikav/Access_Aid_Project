@@ -1,11 +1,11 @@
 import './ReviewForm.css';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import Rating from 'react-rating';
 
 
 const ReviewForm = ({onFormSubmit, selectedLocation, users}) => {
 
-    const [author, setAuthor] = useState("");
+    const [author, setAuthor] = useState(null);
     const [text, setText] = useState(""); 
     const [noise, setNoise] = useState(0); 
     const [light, setLight] = useState(0); 
@@ -13,7 +13,11 @@ const ReviewForm = ({onFormSubmit, selectedLocation, users}) => {
     const [mobility, setMobility] = useState(0); 
     const [support, setSupport] = useState(0); 
     
-
+    useEffect(() => {
+        if(users.length) {
+            setAuthor(users[0].id)
+        }
+    }, [users])
 
     const handleAuthorChange = (evt) => {		
         setAuthor(evt.target.value);
@@ -93,7 +97,7 @@ const ReviewForm = ({onFormSubmit, selectedLocation, users}) => {
         <div>
           Your name
           <br />
-          <select id="name" name="name" placeholder="Name" value={author} onChange={handleAuthorChange} required>
+          <select required id="name" name="name" placeholder="Name" value={author} onChange={handleAuthorChange} required>
             <option selected disabled value={null}>Please select yourself</option>
             {userOptionNodes}
           </select>

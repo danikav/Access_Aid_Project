@@ -20,8 +20,8 @@ function LocationContainer({users}) {
   const addReview = (submittedReview) => {
     const nowFromEpoch = Date.now()
     const newDate = new Date()
-    newDate.setUTCSeconds(nowFromEpoch)
-    submittedReview.date = newDate;
+    newDate.setUTCMilliseconds(nowFromEpoch)
+    submittedReview.date = new Date().toISOString().split("T")[0];
     return submittedReview
   }
 
