@@ -36,4 +36,6 @@ form * {
         user-select: none;
       }
       
-   
+   #name {
+       padding: 10px;
+   }

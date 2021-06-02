@@ -42,10 +42,11 @@ const ReviewForm = ({onFormSubmit}) => {
           <br />
           <input type="text" id="name" name="name" placeholder="Name" value={author} onChange={handleAuthorChange} required />
         </div>
+        <br />
 
         <div class="ratings" id="rating-light" name="rating-light">
-          Light level
-          <Rating start="0" stop="5" step="1"/>
+          Light level <br />
+          <Rating start="0" stop="5" step="1" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
           {/* <br />
           <label>One
          <input type="radio" name="radio" />
@@ -76,8 +77,8 @@ const ReviewForm = ({onFormSubmit}) => {
         </div>
 
          <div class="ratings" id="rating-noise" name="rating-noise">
-          Noise level
-          <Rating start="0" stop="5" step="1"/>
+          Noise level <br />
+          <Rating start="0" stop="5" step="1" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
           {/* <br />
           <label>One
          <input type="radio" name="radio" />
@@ -108,8 +109,8 @@ const ReviewForm = ({onFormSubmit}) => {
         </div>
 
         <div class="ratings" id="rating-space" name="rating-space" >
-          Space Level
-          <Rating start="0" stop="5" step="1"/>
+          Space Level <br />
+          <Rating start="0" stop="5" step="1" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
           {/* <br />
           <label>One
          <input type="radio" name="radio" />
@@ -140,8 +141,8 @@ const ReviewForm = ({onFormSubmit}) => {
         </div> 
 
         <div class="ratings" id="rating-access" name="rating-access" >
-          Mobility Access
-          <Rating start="0" stop="5" step="1"/>
+          Mobility Access <br />
+          <Rating start="0" stop="5" step="1" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
           {/* <br />
           <label>One
          <input type="radio" name="radio" />
@@ -172,8 +173,8 @@ const ReviewForm = ({onFormSubmit}) => {
         </div> 
 
         <div class="ratings" id="rating-staff" name="rating-staff" >
-          Staff Support
-          <Rating start="0" stop="5" step="1"/>
+          Staff Support <br />
+          <Rating start="0" stop="5" step="1" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>}/>
           {/* <br />
           <label>One
          <input type="radio" name="radio" />
