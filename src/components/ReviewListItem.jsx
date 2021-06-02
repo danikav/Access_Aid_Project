@@ -7,7 +7,7 @@ const ReviewListItem = ({ name, comment, totalScore, staffSupport, mobilityAcces
   return (
     <div className="review-item">
       <h4 className="review-title">
-        <div className="display-icon">{firstLetter}</div>
+        <div className="review-display-icon"><div className="review-display-letter">{firstLetter}</div></div>
         {name} <Rating className="rating" emptySymbol={<span>&#9734;</span>} fullSymbol={<span>&#9733;</span>} initialRating={totalScore} fractions={2} readonly />
         <span className="review-date"> {date}</span>
       </h4>
