@@ -3,24 +3,26 @@
 }
 
 .location-container-image {
-  width:400px;
-  height:400px; 
-  object-fit:cover;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
   border: 1px solid #3717a04b;
   border-radius: 0.75rem;
 }
 
-.location-review-categories{
+.location-review-categories {
   display: flex;
   justify-content: space-around;
 }
 
 .reviews-scroll-box {
+  /* background-color: #f1eef5; */
   border: 1px solid #3717a04b;
   border-radius: 0.75rem;
   padding: 1rem;
   width: 100%;
-  height: 50vh;
+  min-height: fit-content;
+  max-height: 50vh;
   overflow: auto;
   margin: 1rem 0 0 0;
 }

@@ -113,7 +113,7 @@ function LocationContainer() {
           {/* <p>{reviews[0]}</p> */}
         </div>
       </div>
-      <h3>User Reviews</h3>
+      <h3>User Reviews:</h3>
       <div className="reviews-scroll-box">
         <ReviewsList reviews={reviews} />
       </div>
