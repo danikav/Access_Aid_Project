@@ -89,7 +89,7 @@ const ReviewForm = ({ onFormSubmit, selectedLocation, users }) => {
   return (
     <>
       <form method="post" onSubmit={handleFormSubmit}>
-        <h4>Leave Review</h4>
+        <h3>Leave a review!</h3>
 
         <div>
           Your name
