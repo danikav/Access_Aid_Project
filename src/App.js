@@ -1,28 +1,58 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
-import Map from './components/Map';
 import NavBar from './components/NavBar';
-import Business from './components/Business';
-import SearchBar from './components/SearchBar';
-import Home from "./components/Home";
-import ErrorPage from './components/ErrorPage';
+import LocationListContainer from './container/LocationListContainer';
+import Home from './container/HomeContainer';
+import LocationContainer from './container/LocationContainer';
+import ErrorPage from './container/ErrorPage';
+import Resources from './components/Resources';
 import './App.css';
 
 function App() {
+  const [locations, setLocations] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [locationsLoaded, setLocationsLoaded] = useState(false);
+
+  useEffect(() => {
+    fetch('http://localhost:8080/api/locations')
+      .then((response) => response.json())
+      .then((data) => setLocations(data));
+
+      fetch('http://localhost:8080/api/users')
+      .then((response) => response.json())
+      .then((data) => setUsers(data));
+  }, []);
+
+  useEffect(() => {
+    if (locations.length) {
+      setLocationsLoaded(true);
+    }
+  }, [locations]);
+
   return (
-    <Router>
     <>
-    <NavBar />
-        <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/businesses" component={Business} />
-        <Route
-          path="/resources" 
-        />
-        <Route component={ErrorPage}/>
-        </Switch>
-        </>
-    </Router>
+      <Router>
+        <NavBar className="nav-bar" />
+        <div className="page-content">
+          <Switch>
+            <Route exact path="/">
+              <Home locations={locations} locationsLoaded={locationsLoaded} />
+            </Route>
+            <Route path="/locations">
+              <LocationListContainer locations={locations} locationsLoaded={locationsLoaded} />
+            </Route>
+            <Route path="/location/:id">
+              <LocationContainer users={users} />
+            </Route>
+            <Route path="/resources" component={Resources} />
+            <Route path="/mock-business" component={LocationContainer} />
+            <Route component={ErrorPage} />
+            
+          </Switch>
+        </div>
+      </Router>
+    </>
   );
 }
 

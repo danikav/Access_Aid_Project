@@ -1,0 +1,38 @@
+.location-container {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.location-container-image {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border: 1px solid #3717a04b;
+  border-radius: 0.75rem;
+}
+
+.location-info h2 {
+  font-size: 28px;
+}
+
+.location-review-categories {
+  display: flex;
+  justify-content: space-around;
+}
+
+.location-map-container {
+  margin-top: 1rem;
+  height: 30vh;
+  border: 3px solid lightgrey;
+  margin: auto;
+}
+
+.reviews-scroll-box {
+  border: 1px solid #3717a04b;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  min-height: fit-content;
+  max-height: 50vh;
+  overflow: auto;
+  margin: 1rem 0 0 0;
+}

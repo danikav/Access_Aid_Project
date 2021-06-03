@@ -1,0 +1,15 @@
+.logo {
+  display: inline;
+  position: relative;
+  top: 17px;
+  width: 66px;
+  height: 66px;
+}
+
+.title {
+  display: inline;
+}
+
+.home-container {
+  height: 100%;
+}
