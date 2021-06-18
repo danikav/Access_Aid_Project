@@ -15,11 +15,11 @@ function App() {
   const [locationsLoaded, setLocationsLoaded] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/locations')
+    fetch('https://access-aid-default-rtdb.firebaseio.com/locations/.json')
       .then((response) => response.json())
       .then((data) => setLocations(data));
 
-      fetch('http://localhost:8080/api/users')
+      fetch('https://access-aid-default-rtdb.firebaseio.com/users/.json')
       .then((response) => response.json())
       .then((data) => setUsers(data));
   }, []);
