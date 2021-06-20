@@ -10,7 +10,7 @@ import './LocationContainer.css';
 
 function LocationContainer({users}) {
   const { id } = useParams();
-  const url = 'http://localhost:8080/api/locations/' + id;
+  const url = 'https://access-aid-default-rtdb.firebaseio.com/locations/' + id + '.json';
   const [location, setLocation] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [locationLoaded, setLocationLoaded] = useState(false);
@@ -34,7 +34,7 @@ function LocationContainer({users}) {
   const handlePost = (review) => {
     const datedReview = addReview(review)
     const request = new Request();
-    request.post(`http://localhost:8080/api/ratings`, datedReview)
+    request.post(`https://access-aid-default-rtdb.firebaseio.com/ratings/.json`, datedReview)
     .then(() => fetchLocation())
   }
 
